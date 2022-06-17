@@ -1,0 +1,54 @@
+{
+  "training": [
+    {
+      "id": "1",
+      "enabled": true,
+      "name": "Boxing",
+      "currentPrice": "10",
+      "previousPrice": "10",
+      "category": "boxing",
+      "urlImg": "./img/boxingLogo.png",
+      "productUrl": "/boxing"
+    },
+    {
+      "id": "2",
+      "enabled": true,
+      "name": "Body Pump",
+      "currentPrice": "9",
+      "previousPrice": "9",
+      "category": "power",
+      "urlImg": "./img/bodyPump.png",
+      "productUrl": "/bodyPump"
+    },
+    {
+      "id": "3",
+      "enabled": true,
+      "name": "Crossfit",
+      "currentPrice": "9",
+      "previousPrice": "9",
+      "category": "power",
+      "urlImg": "./img/crossfit.png",
+      "productUrl": "/crossfit"
+    },
+    {
+      "id": "4",
+      "enabled": true,
+      "name": "Full Body",
+      "currentPrice": "11",
+      "previousPrice": "11",
+      "category": "power",
+      "urlImg": "./img/fullBody.png",
+      "productUrl": "/fullBody"
+    },
+    {
+      "id": "5",
+      "enabled": true,
+      "name": "yoga",
+      "currentPrice": "7",
+      "previousPrice": "7",
+      "category": "yoga",
+      "urlImg": "./img/yoga.png",
+      "productUrl": "/yoga"
+    }
+  ]
+}
