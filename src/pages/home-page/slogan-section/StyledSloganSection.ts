@@ -1,4 +1,4 @@
-import { Box, Button, styled } from '@mui/material';
+import { Box, Button, Container, styled } from '@mui/material';
 
 export const StyledWraper = styled(Box)(() => ({
   width: '100%',
@@ -7,11 +7,8 @@ export const StyledWraper = styled(Box)(() => ({
   backgroundColor: '#131316',
 }));
 
-export const StyledContainer = styled(Box)(({ theme }) => ({
-  paddingLeft: '200px',
-  paddingRight: '200px',
-  margin: '0',
-  position: 'relative',
+export const StyledContainer = styled(Container)(({ theme }) => ({
+  maxWidth: '1038px',
   [theme.breakpoints.down('lg')]: {
     paddingLeft: '20px',
     paddingRight: '20px',
@@ -19,13 +16,14 @@ export const StyledContainer = styled(Box)(({ theme }) => ({
 }));
 
 export const StyledBox = styled(Box)(() => ({
-  width: '500px',
+  maxWidth: '515px',
   zIndex: '22',
 }));
 
 export const StyledContentBox = styled(Box)(({ theme }) => ({
   display: 'flex',
   position: 'relative',
+  marginLeft: '10%',
   [theme.breakpoints.down('lg')]: {
     justifyContent: 'center',
   },
@@ -99,20 +97,12 @@ export const StyledButton = styled(Button)(() => ({
   },
 }));
 
-export const StyledImgWraper = styled(Box)(({ theme }) => ({
-  position: 'relative',
-  flex: '0 0 500px',
-  zIndex: '1',
-  [theme.breakpoints.down('lg')]: {
-    display: 'none',
-  },
-}));
-
 export const StyledImg = styled('img')(() => ({
-  width: '100%',
+  maxWidth: '500px',
   height: '100%',
   objectFit: 'cover',
   position: 'absolute',
   top: '0',
-  right: '30px',
+  left: '450px',
+  zIndex: '-999',
 }));

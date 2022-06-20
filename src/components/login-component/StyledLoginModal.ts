@@ -1,4 +1,4 @@
-import { Box, styled } from '@mui/material';
+import { Box, Modal, styled } from '@mui/material';
 
 export const StyledWraper = styled(Box)(() => ({
   maxWidth: '1240px',
@@ -9,7 +9,16 @@ export const StyledWraper = styled(Box)(() => ({
 export const StyledImgBox = styled(Box)(() => ({
   position: 'relative',
   flex: '0 0 53.333%',
-  minHeight: '650px',
+  minHeight: '680px',
+}));
+
+export const StyledModal = styled(Modal)(() => ({
+  position: 'absolute',
+  top: '0',
+  left: '0',
+  overflow: 'scroll',
+  height: '100%',
+  display: 'block',
 }));
 
 export const StyledImg = styled('img')(() => ({

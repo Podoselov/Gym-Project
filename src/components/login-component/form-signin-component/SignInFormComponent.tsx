@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 import Checkbox from '@mui/material/Checkbox';
@@ -14,23 +14,29 @@ import {
   StyledBox,
   StyledButtonFacebook,
   StyledButtonGmail,
-} from './StyledLoginForm';
+} from '../form-login-component/StyledLoginForm';
 
-interface MyFormValues {
+interface SignInFormValues {
   nameMail: string;
+  email: string;
   password: string;
 }
 
-export const LoginForm: React.FC<{}> = () => {
+const SignInFormComponent: React.FC<{}> = () => {
   const SignupSchema = Yup.object().shape({
-    nameMail: Yup.string().required('Please enter a valid email address.'),
+    nameMail: Yup.string().required('Please enter a valid name.'),
+    email: Yup.string().required('Please enter a valid email address.'),
     password: Yup.string()
       .required('Please enter a password.')
       .min(8, 'Password is too short - should be 8 chars minimum.')
       .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
   });
 
-  const initialValues: MyFormValues = { nameMail: '', password: '' };
+  const initialValues: SignInFormValues = {
+    nameMail: '',
+    email: '',
+    password: '',
+  };
 
   return (
     <div>
@@ -44,8 +50,12 @@ export const LoginForm: React.FC<{}> = () => {
       >
         {({ values }) => (
           <StyledForm>
-            <StyledName>User name / email address</StyledName>
+            <StyledName>YOUR name</StyledName>
             <StyledMailField id="firstName" name="nameMail" />
+            <StyledName sx={{ margin: '0 0 10px 0' }}>
+              email or phone number
+            </StyledName>
+            <StyledMailField id="email" name="email" />
             <StyledName sx={{ margin: '0 0 10px 0' }}>PASSWORD</StyledName>
             <StyledPassField id="password" name="password" />
             <StyledBox
@@ -55,9 +65,8 @@ export const LoginForm: React.FC<{}> = () => {
                 control={<Checkbox name="remember" />}
                 label="REMEMBER ME"
               />
-              <StyledLink href="!#">FORGOT PASSWORD?</StyledLink>
             </StyledBox>
-            <StyledButton type="submit">sing up</StyledButton>
+            <StyledButton type="submit">get started</StyledButton>
             <StyledText>or</StyledText>
             <StyledButtonFacebook>login with facebook</StyledButtonFacebook>
             <StyledButtonGmail>login with gmail</StyledButtonGmail>
@@ -67,3 +76,5 @@ export const LoginForm: React.FC<{}> = () => {
     </div>
   );
 };
+
+export default SignInFormComponent;

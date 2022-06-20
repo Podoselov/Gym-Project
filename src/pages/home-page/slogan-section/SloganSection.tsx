@@ -7,7 +7,6 @@ import {
   StyledSpan,
   StyledButton,
   StyledText,
-  StyledImgWraper,
   StyledImg,
   StyledContentBox,
 } from './StyledSloganSection';
@@ -30,10 +29,8 @@ const SloganSection: React.FC = () => {
               </span>
             </StyledText>
             <StyledButton>JOIN NOW</StyledButton>
-          </StyledBox>
-          <StyledImgWraper>
             <StyledImg src={img} alt="слоган логотип" />
-          </StyledImgWraper>
+          </StyledBox>
         </StyledContentBox>
       </StyledContainer>
     </StyledWraper>
