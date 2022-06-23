@@ -6,13 +6,7 @@ export const StyledWraper = styled(Box)(() => ({
   height: '100%',
   margin: '0px',
   padding: '0px',
-  backgroundColor: 'rgba(252, 252, 255, 1)',
-}));
-
-export const StyledContainer = styled(Box)(() => ({
-  paddingLeft: '336px',
-  paddingRight: '336px',
-  margin: '0',
+  backgroundColor: 'rgba(255, 255, 255, 1)',
 }));
 
 export const StyledSpan = styled('span')(() => ({
@@ -26,8 +20,9 @@ export const StyledHeading = styled('h1')(() => ({
   fontSize: '50px',
   lineHeight: '50px',
   color: '#131316',
-  padding: '155px 0 52px 65px',
+  padding: '155px 0 52px',
   margin: '0',
+  textAlign: 'center',
 }));
 
 export const StyledText = styled('p')(() => ({
@@ -38,6 +33,7 @@ export const StyledText = styled('p')(() => ({
   lineHeight: '32px',
   color: '#595962',
   marginBottom: '32px',
+  padding: '0 180px',
 }));
 
 export const StyledButton = styled(Button)(() => ({
@@ -49,8 +45,7 @@ export const StyledButton = styled(Button)(() => ({
   color: '#131316',
   textTransform: 'uppercase',
   backgroundColor: '#FFFFFF',
-  paddingTop: '17px',
-  paddingBottom: '17px',
+  padding: '17px 0 17px 180px',
   marginBottom: '180px',
 }));
 

@@ -1,8 +1,8 @@
 import React from 'react';
+import { Container } from '@mui/material';
 import {
   StyledButton,
   StyledButtonIcon,
-  StyledContainer,
   StyledHeading,
   StyledSpan,
   StyledText,
@@ -12,7 +12,7 @@ import {
 const MissionSection: React.FC = () => {
   return (
     <StyledWraper>
-      <StyledContainer>
+      <Container>
         <StyledHeading>
           Our mission
           <StyledSpan>.</StyledSpan>
@@ -30,7 +30,7 @@ const MissionSection: React.FC = () => {
           Join Now
           <StyledButtonIcon />
         </StyledButton>
-      </StyledContainer>
+      </Container>
     </StyledWraper>
   );
 };

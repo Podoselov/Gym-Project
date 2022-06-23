@@ -64,6 +64,7 @@
     "no-unused-vars": "off",
     "no-shadow": "off",
     "implicit-arrow-linebreak": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "import/no-unresolved": "off"
   }
 }
