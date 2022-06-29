@@ -36,8 +36,8 @@ const SliderComponent: React.FC = () => {
           );
         })}
         <StyledContainer>
-          <SwiperButtonPrev />
-          <SwiperButtonNext />
+          <SwiperButtonPrev idSlider />
+          <SwiperButtonNext idSlider />
         </StyledContainer>
       </Swiper>
     </StyledWraper>

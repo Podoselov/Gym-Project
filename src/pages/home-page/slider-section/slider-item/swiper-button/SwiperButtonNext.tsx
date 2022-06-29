@@ -2,16 +2,17 @@ import React from 'react';
 import { useSwiper } from 'swiper/react';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { StyledIconButton } from '../../StyledSliderComponent';
+import { IProps } from './SwiperButtonPrev';
 
-const SwiperButtonNext: React.FC = () => {
+const SwiperButtonNext: React.FC<IProps> = ({ idSlider }) => {
   const swiper = useSwiper();
 
   const showNextSlide = () => {
-    return swiper.slideNext();
+    return idSlider ? swiper.slideNext() : null;
   };
 
   return (
-    <StyledIconButton onClick={showNextSlide}>
+    <StyledIconButton id="swiper-forward" onClick={showNextSlide}>
       <NavigateNextIcon />
     </StyledIconButton>
   );

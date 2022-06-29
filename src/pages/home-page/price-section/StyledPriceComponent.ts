@@ -7,7 +7,14 @@ export const StyledWraper = styled(Box)(() => ({
   backgroundColor: 'rgba(255, 255, 255, 1)',
 }));
 
-export const StyledContainer = styled(Container)(() => ({}));
+export const StyledContainer = styled(Container)(() => ({
+  paddingBottom: '180px',
+}));
+
+export const StyledCardWraper = styled(Box)(() => ({
+  display: 'flex',
+  justifyContent: 'space-around',
+}));
 
 export const StyledHeading = styled('h1')(() => ({
   fontFamily: 'Inter',

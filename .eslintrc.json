@@ -65,6 +65,7 @@
     "no-shadow": "off",
     "implicit-arrow-linebreak": "off",
     "react/jsx-props-no-spreading": "off",
-    "import/no-unresolved": "off"
+    "import/no-unresolved": "off",
+    "react/jsx-one-expression-per-line": "off"
   }
 }
