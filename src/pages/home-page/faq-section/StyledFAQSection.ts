@@ -5,9 +5,12 @@ export const StyledWraper = styled(Box)(() => ({
   margin: '0',
   padding: '0',
   backgroundColor: 'rgba(255, 255, 255, 1)',
+  display: 'flex',
+  justifyContent: 'center',
 }));
 
-export const StyledContainer = styled(Container)(() => ({
+export const StyledContainer = styled(Box)(() => ({
+  maxWidth: '768px',
   marginBottom: '464px',
 }));
 

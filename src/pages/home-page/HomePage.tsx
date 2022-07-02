@@ -5,6 +5,8 @@ import SliderComponent from './slider-section/SliderComponent';
 import PriceComponent from './price-section/PriceComponent';
 import CommunityComponent from './community-section/CommunityComponent';
 import FAQSectionComponent from './faq-section/FAQSectionComponent';
+import FooterComponent from './footer-section/FooterComponent';
+import MainFooterComponent from './footer-section/main-footer/MainFooterComponent';
 
 const HomePage: React.FC = () => {
   return (
@@ -15,6 +17,8 @@ const HomePage: React.FC = () => {
       <PriceComponent />
       <CommunityComponent />
       <FAQSectionComponent />
+      <FooterComponent />
+      <MainFooterComponent />
     </>
   );
 };
