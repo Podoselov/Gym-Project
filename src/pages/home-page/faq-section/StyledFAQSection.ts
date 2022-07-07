@@ -11,7 +11,6 @@ export const StyledWraper = styled(Box)(() => ({
 
 export const StyledContainer = styled(Box)(() => ({
   maxWidth: '768px',
-  marginBottom: '464px',
 }));
 
 export const StyledHeading = styled('h1')(() => ({

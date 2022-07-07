@@ -14,6 +14,7 @@ export const StyledContainer = styled(Container)(() => ({
 export const StyledCardWraper = styled(Box)(() => ({
   display: 'flex',
   justifyContent: 'space-around',
+  alignItems: 'center',
 }));
 
 export const StyledHeading = styled('h1')(() => ({

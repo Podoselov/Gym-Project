@@ -7,6 +7,7 @@ export const StyledWraper = styled(Box)(() => ({
   backgroundColor: '#131316',
   display: 'flex',
   justifyContent: 'flex-end',
+  marginTop: '464px',
 }));
 
 export const StyledContainer = styled(Box)(() => ({

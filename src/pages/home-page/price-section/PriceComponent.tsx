@@ -41,8 +41,6 @@ const PriceComponent: React.FC = () => {
           name="Elite"
           price={49}
           listItem={[
-            'unlimited gym access',
-            'all training programs',
             'free fitness consultation',
             'personal trainer',
             '50% off drinks',

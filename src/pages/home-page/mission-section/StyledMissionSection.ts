@@ -20,7 +20,7 @@ export const StyledHeading = styled('h1')(() => ({
   fontSize: '50px',
   lineHeight: '50px',
   color: '#131316',
-  padding: '155px 0 52px',
+  padding: '0 0 52px',
   margin: '0',
   textAlign: 'center',
 }));
@@ -46,7 +46,6 @@ export const StyledButton = styled(Button)(() => ({
   textTransform: 'uppercase',
   backgroundColor: '#FFFFFF',
   padding: '17px 0 17px 180px',
-  marginBottom: '180px',
 }));
 
 export const StyledButtonIcon = styled(KeyboardArrowRightOutlinedIcon)(() => ({

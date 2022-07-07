@@ -7,12 +7,15 @@ import CommunityComponent from './community-section/CommunityComponent';
 import FAQSectionComponent from './faq-section/FAQSectionComponent';
 import FooterComponent from './footer-section/FooterComponent';
 import MainFooterComponent from './footer-section/main-footer/MainFooterComponent';
+import { StyledWraper } from './StyledHomePage';
 
 const HomePage: React.FC = () => {
   return (
     <>
       <SloganSection />
-      <MissionSection />
+      <StyledWraper>
+        <MissionSection />
+      </StyledWraper>
       <SliderComponent />
       <PriceComponent />
       <CommunityComponent />

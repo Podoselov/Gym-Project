@@ -3,7 +3,7 @@ import { styled, Box, List, ListItem, Button } from '@mui/material';
 export const StyledBox = styled(Box)(() => ({
   padding: '0',
   margin: '0',
-  backgroundColor: 'rgba(255, 255, 255, 1)',
+  backgroundColor: 'rgba(19, 19, 22, 0.05)',
   display: 'inline-block',
 }));
 
