@@ -1,10 +1,25 @@
 {
   "files": {
-    "main.js": "/Gym-Project/static/js/main.beda7b06.js",
+    "main.css": "/Gym-Project/static/css/main.69cadcf6.css",
+    "main.js": "/Gym-Project/static/js/main.cdc9d285.js",
+    "static/media/boxerTraining.png": "/Gym-Project/static/media/boxerTraining.24becee37e554eba9609.png",
+    "static/media/loginModalImg.png": "/Gym-Project/static/media/loginModalImg.61fef048dc738e6ad6e6.png",
+    "static/media/heroImageHeader.png": "/Gym-Project/static/media/heroImageHeader.4a80fc61f74bd555e079.png",
+    "static/media/footerLogo.png": "/Gym-Project/static/media/footerLogo.4e2822f915101402d85a.png",
+    "static/media/community3.png": "/Gym-Project/static/media/community3.cbea54ac01a6a3521e10.png",
+    "static/media/community1.png": "/Gym-Project/static/media/community1.182bf01c58547dc68d1e.png",
+    "static/media/community2.png": "/Gym-Project/static/media/community2.ee4ab3b0a4d65f6d9c1f.png",
+    "static/media/bodyPump.png": "/Gym-Project/static/media/bodyPump.7d585bb5808ea2439baa.png",
+    "static/media/fullBody.png": "/Gym-Project/static/media/fullBody.e290d2efdde81994add0.png",
+    "static/media/yoga.png": "/Gym-Project/static/media/yoga.5d0a7e8d9430385dbb6b.png",
+    "static/media/crossfit.png": "/Gym-Project/static/media/crossfit.8abd2d5e5b9c4c8d10fd.png",
+    "static/media/boxingLogo.png": "/Gym-Project/static/media/boxingLogo.88c60e7e825631222d49.png",
     "index.html": "/Gym-Project/index.html",
-    "main.beda7b06.js.map": "/Gym-Project/static/js/main.beda7b06.js.map"
+    "main.69cadcf6.css.map": "/Gym-Project/static/css/main.69cadcf6.css.map",
+    "main.cdc9d285.js.map": "/Gym-Project/static/js/main.cdc9d285.js.map"
   },
   "entrypoints": [
-    "static/js/main.beda7b06.js"
+    "static/css/main.69cadcf6.css",
+    "static/js/main.cdc9d285.js"
   ]
 }
