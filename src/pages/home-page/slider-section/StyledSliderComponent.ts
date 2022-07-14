@@ -32,7 +32,7 @@ export const StyledHeading = styled('h1')(() => ({
   lineHeight: '50px',
   textAlign: 'center',
   color: '#131316',
-  marginBottom: '115px',
+  margin: '90px 0 115px',
 }));
 
 export const StyledSwiper = styled(Swiper)(() => ({
