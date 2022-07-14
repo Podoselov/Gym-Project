@@ -10,14 +10,13 @@ export const StyledImgWraper = styled(Box)(() => ({
   minWidth: '450px',
   position: 'relative',
   marginRight: '58px',
-  backgroundColor: '#131316',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'flex-end',
   '& img': {
     position: 'absolute',
     width: '100%',
-    height: '80%',
+    height: '100%',
     top: '0',
     left: '0',
     objectFit: 'cover',
@@ -33,6 +32,10 @@ export const StyledImgWraper = styled(Box)(() => ({
     letterSpacing: '2.5px',
     display: 'inline-block',
     zIndex: '999',
+    backgroundColor: '#131316',
+    width: '100%',
+    padding: '29px 0',
+    margin: '0',
   },
 }));
 
