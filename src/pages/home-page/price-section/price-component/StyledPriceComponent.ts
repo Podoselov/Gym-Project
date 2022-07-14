@@ -1,4 +1,5 @@
 import { styled, Box, List, ListItem, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 export const StyledBox = styled(Box)(() => ({
   padding: '0',
@@ -114,8 +115,8 @@ export const StyledMainItem = styled(ListItem)(() => ({
   marginBottom: '16px',
 }));
 
-export const StyledButton = styled(Button)(() => ({
-  margin: '0px 128px 42px',
+export const StyledButton = styled(Link)(() => ({
+  margin: '0px 0px 80px 0px',
   padding: '14px 40px',
   fontFamily: 'Inter',
   fontStyle: 'normal',
@@ -126,10 +127,17 @@ export const StyledButton = styled(Button)(() => ({
   border: '1px solid #131316',
   borderRadius: '1px',
   textTransform: 'uppercase',
+  textDecoration: 'none',
 }));
 
-export const StyledMainButton = styled(Button)(() => ({
-  margin: '0px 128px 80px',
+export const StyledButtonWraper = styled(Box)(() => ({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+}));
+
+export const StyledMainButton = styled(Link)(() => ({
+  margin: '0px 0px 80px 0px',
   padding: '14px 40px',
   fontFamily: 'Inter',
   fontStyle: 'normal',
@@ -141,6 +149,7 @@ export const StyledMainButton = styled(Button)(() => ({
   borderRadius: '1px',
   textTransform: 'uppercase',
   backgroundColor: '#FFFFFF',
+  textDecoration: 'none',
   '&:hover': {
     backgroundColor: '#FFFFFF',
   },

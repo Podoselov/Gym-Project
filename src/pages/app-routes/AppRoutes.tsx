@@ -17,6 +17,8 @@ import WorkoutsPage from '../workouts-page/WorkoutsPage';
 import PricingPage from '../pricing-page/PricingPage';
 import CommunityPage from '../community-page/CommunityPage';
 import FaqPage from '../faq-page/FaqPage';
+import LoginPage from '../login-page/LoginPage';
+import RegistrationPage from '../registration-page/RegistrationPage';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -32,6 +34,8 @@ const AppRoutes: React.FC = () => {
           <Route path={routes.PRICING_ROUTE} element={<PricingPage />} />
           <Route path={routes.COMMUNITY_ROUTE} element={<CommunityPage />} />
           <Route path={routes.FAQ_ROUTE} element={<FaqPage />} />
+          <Route path={routes.LOGIN_ROUTE} element={<LoginPage />} />
+          <Route path={routes.SIGN_UP_ROUTE} element={<RegistrationPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Router>

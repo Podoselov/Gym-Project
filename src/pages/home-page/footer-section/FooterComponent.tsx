@@ -11,6 +11,7 @@ import {
   StyledSpan,
 } from '../slogan-section/StyledSloganSection';
 import img from './footer-section-img/footerLogo.png';
+import { routes } from '../../../utils/routes';
 
 const FooterComponent: React.FC = () => {
   return (
@@ -25,7 +26,7 @@ const FooterComponent: React.FC = () => {
           We’ll keep you updated on the things you need to know about Gymme.
           Nothing more, nothing less.
         </StyledTypography>
-        <StyledButton>JOIN NOW</StyledButton>
+        <StyledButton to={routes.LOGIN_ROUTE}>JOIN NOW</StyledButton>
       </StyledContainer>
     </StyledWraper>
   );

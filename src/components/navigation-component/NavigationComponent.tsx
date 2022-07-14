@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Box } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import {
@@ -15,28 +15,8 @@ import {
 } from './StyledNavigationComponent';
 import MainLogoComponent from './main-logo/MainLogoComponent';
 import { routes } from '../../utils/routes';
-import LoginModalComponent from '../login-component/LoginModalComponent';
-import { LoginForm } from '../login-component/form-login-component/LoginForm';
-import SignInFormComponent from '../login-component/form-signin-component/SignInFormComponent';
 
 const NavigationComponent: React.FC = () => {
-  const [openLogInModal, setOpenLogInModal] = useState(false);
-  const [openSignInModal, setOpenSignInModal] = useState(false);
-
-  const handleOpenLogInModal = () => {
-    setOpenLogInModal(true);
-  };
-  const handleCloseLogInModal = () => {
-    setOpenLogInModal(false);
-  };
-
-  const handleOpenSignInModal = () => {
-    setOpenSignInModal(true);
-  };
-  const handleCloseSignInModal = () => {
-    setOpenSignInModal(false);
-  };
-
   return (
     <StyledWraper>
       <StyledContainer>
@@ -55,37 +35,13 @@ const NavigationComponent: React.FC = () => {
             </StyledListItem>
           </StyledList>
           <StyledLogin>
-            <StyledLogInButton
-              onClick={() => {
-                handleOpenLogInModal();
-              }}
-            >
+            <StyledLogInButton to={routes.LOGIN_ROUTE}>
               Log in
             </StyledLogInButton>
-            <StyledSignInButton
-              onClick={() => {
-                handleOpenSignInModal();
-              }}
-            >
+            <StyledSignInButton to={routes.SIGN_UP_ROUTE}>
               Sign in
             </StyledSignInButton>
           </StyledLogin>
-          <LoginModalComponent
-            open={openLogInModal}
-            setOpen={setOpenLogInModal}
-            handleClose={handleCloseLogInModal}
-            firstHeading="WELCOME BACK,"
-            secondHeading="PLEASE LOGIN TO YOU ACCOUNT"
-            formComponent={<LoginForm />}
-          />
-          <LoginModalComponent
-            open={openSignInModal}
-            setOpen={setOpenSignInModal}
-            handleClose={handleCloseSignInModal}
-            firstHeading="create your account"
-            secondHeading=""
-            formComponent={<SignInFormComponent />}
-          />
           <StyledMenuButton>
             <MenuIcon />
           </StyledMenuButton>

@@ -11,6 +11,7 @@ interface IProps {
   buttonText: string;
   textFirst: string;
   textSecond: string;
+  idForScroll: string;
 }
 
 const WorkoutsComponent: React.FC<IProps> = ({
@@ -18,9 +19,10 @@ const WorkoutsComponent: React.FC<IProps> = ({
   buttonText,
   textFirst,
   textSecond,
+  idForScroll,
 }) => {
   return (
-    <StyledWorkoutsWraper>
+    <StyledWorkoutsWraper id={idForScroll}>
       <StyledImgWraper>
         <img src={img} alt="фото тренировки" />
         <p>{buttonText}</p>

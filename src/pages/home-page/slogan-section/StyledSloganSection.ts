@@ -1,4 +1,5 @@
 import { Box, Button, Container, styled } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 export const StyledWraper = styled(Box)(() => ({
   width: '100%',
@@ -18,6 +19,7 @@ export const StyledContainer = styled(Container)(({ theme }) => ({
 export const StyledBox = styled(Box)(() => ({
   maxWidth: '515px',
   zIndex: '22',
+  marginBottom: '174px',
 }));
 
 export const StyledContentBox = styled(Box)(({ theme }) => ({
@@ -77,7 +79,7 @@ export const StyledText = styled('p')(({ theme }) => ({
   },
 }));
 
-export const StyledButton = styled(Button)(() => ({
+export const StyledButton = styled(Link)(() => ({
   fontFamily: 'Inter',
   fontStyle: 'normal',
   fontWeight: '700',
@@ -85,11 +87,11 @@ export const StyledButton = styled(Button)(() => ({
   lineHeight: '18px',
   color: '#131316',
   textTransform: 'uppercase',
+  textDecoration: 'none',
   backgroundColor: '#FFFFFF',
   padding: '14px 40px',
   border: '2px solid #FFFFFF',
   borderRadius: '1px',
-  marginBottom: '174px',
   '&:hover': {
     backgroundColor: 'rgba(74, 226, 144, 1)',
     color: 'rgba(255, 255, 255, 0.9)',

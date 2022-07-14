@@ -1,4 +1,4 @@
-import { Box, Button, styled } from '@mui/material';
+import { Box, styled } from '@mui/material';
 
 export const StyledWorkoutsWraper = styled(Box)(() => ({
   display: 'flex',

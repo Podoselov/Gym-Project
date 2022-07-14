@@ -11,6 +11,7 @@ import {
   StyledContentBox,
 } from './StyledSloganSection';
 import img from './slogan-img/heroImageHeader.png';
+import { routes } from '../../../utils/routes';
 
 const SloganSection: React.FC = () => {
   return (
@@ -28,7 +29,7 @@ const SloganSection: React.FC = () => {
                 a fun and friendly, safe space.
               </span>
             </StyledText>
-            <StyledButton>JOIN NOW</StyledButton>
+            <StyledButton to={routes.LOGIN_ROUTE}>JOIN NOW</StyledButton>
             <StyledImg src={img} alt="слоган логотип" />
           </StyledBox>
         </StyledContentBox>

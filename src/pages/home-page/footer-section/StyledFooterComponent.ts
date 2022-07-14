@@ -15,11 +15,12 @@ export const StyledContainer = styled(Box)(() => ({
   marginRight: '240px',
   position: 'relative',
   zIndex: '999',
+  marginBottom: '174px',
 }));
 
 export const StyledImg = styled('img')(() => ({
   maxWidth: '500px',
-  height: '108%',
+  height: '153%',
   top: '-50px',
   right: '450px',
   objectFit: 'cover',

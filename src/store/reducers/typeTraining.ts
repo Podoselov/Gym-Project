@@ -11,4 +11,5 @@ export interface ITraining {
 
 export interface Training {
   training: ITraining[];
+  trainingId?: '';
 }

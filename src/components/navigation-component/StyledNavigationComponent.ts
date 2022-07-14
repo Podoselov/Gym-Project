@@ -1,4 +1,4 @@
-import { Box, Button, IconButton, List, ListItem, styled } from '@mui/material';
+import { Box, IconButton, List, ListItem, styled } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 export const StyledWraper = styled(Box)(() => ({
@@ -72,7 +72,7 @@ export const StyledMenuButton = styled(IconButton)(({ theme }) => ({
   },
 }));
 
-export const StyledLogInButton = styled(Button)(() => ({
+export const StyledLogInButton = styled(Link)(() => ({
   color: '#FFFFFF',
   fontFamily: 'Inter',
   fontStyle: 'normal',
@@ -80,9 +80,12 @@ export const StyledLogInButton = styled(Button)(() => ({
   fontSize: '12px',
   lineHeight: '18px',
   textTransform: 'uppercase',
+  textDecoration: 'none',
+  textAlign: 'center',
+  padding: '12px 30px',
 }));
 
-export const StyledSignInButton = styled(Button)(() => ({
+export const StyledSignInButton = styled(Link)(() => ({
   fontFamily: 'Inter',
   fontStyle: 'normal',
   fontWeight: '700',
@@ -96,6 +99,7 @@ export const StyledSignInButton = styled(Button)(() => ({
   padding: '12px 30px',
   border: '2px solid #4AE290',
   borderRadius: '1px',
+  textDecoration: 'none',
   '&:hover': {
     backgroundColor: 'rgba(255, 255, 255, 0.9)',
     border: '2px solid rgba(255, 255, 255, 0.9)',

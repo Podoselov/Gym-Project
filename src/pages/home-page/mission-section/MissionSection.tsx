@@ -8,6 +8,7 @@ import {
   StyledText,
   StyledWraper,
 } from './StyledMissionSection';
+import { routes } from '../../../utils/routes';
 
 const MissionSection: React.FC = () => {
   return (
@@ -26,7 +27,7 @@ const MissionSection: React.FC = () => {
           The strength of our heart-felt identity is utilized to inspire every
           person that steps foot into our gyms to better themselves.
         </StyledText>
-        <StyledButton>
+        <StyledButton to={routes.LOGIN_ROUTE}>
           Join Now
           <StyledButtonIcon />
         </StyledButton>

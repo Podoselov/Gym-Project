@@ -28,10 +28,10 @@ const SliderComponent: React.FC = () => {
         slidesPerView={4}
         autoHeight
       >
-        {SliderItemArray.map(({ name, imgUrl }) => {
+        {SliderItemArray.map(({ name, imgUrl, id }) => {
           return (
             <SwiperSlide>
-              <SliderItem name={name} imgUrl={imgUrl} />
+              <SliderItem name={name} imgUrl={imgUrl} id={id} />
             </SwiperSlide>
           );
         })}

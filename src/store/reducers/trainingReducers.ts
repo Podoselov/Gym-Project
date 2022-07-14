@@ -3,14 +3,19 @@ import { Training } from './typeTraining';
 
 const initialState: Training = {
   training: [],
+  trainingId: '',
 };
 
 export const todoSlice = createSlice({
   name: 'training',
   initialState,
-  reducers: {},
+  reducers: {
+    addTrainingId(state, action) {
+      state.trainingId = action.payload;
+    },
+  },
   extraReducers: (builder) => {},
 });
 
-// export const {} = todoSlice.actions;
+export const { addTrainingId } = todoSlice.actions;
 export default todoSlice.reducer;

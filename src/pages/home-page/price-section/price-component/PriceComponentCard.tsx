@@ -15,7 +15,9 @@ import {
   StyledMainName,
   StyledMainPriceContainer,
   StyledMainPriceText,
+  StyledButtonWraper,
 } from './StyledPriceComponent';
+import { routes } from '../../../../utils/routes';
 
 interface IProps {
   name: string;
@@ -47,7 +49,11 @@ const PriceComponentCard: React.FC<IProps> = ({
               );
             })}
           </StyledList>
-          <StyledMainButton>Join now</StyledMainButton>
+          <StyledButtonWraper>
+            <StyledMainButton to={routes.LOGIN_ROUTE}>
+              Join now
+            </StyledMainButton>
+          </StyledButtonWraper>
         </StyledMainBox>
       ) : (
         <StyledBox>
@@ -64,7 +70,9 @@ const PriceComponentCard: React.FC<IProps> = ({
               );
             })}
           </StyledList>
-          <StyledButton>Join now</StyledButton>
+          <StyledButtonWraper>
+            <StyledButton to={routes.LOGIN_ROUTE}>Join now</StyledButton>
+          </StyledButtonWraper>
         </StyledBox>
       )}
     </Box>

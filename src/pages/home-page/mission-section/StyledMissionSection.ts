@@ -1,5 +1,6 @@
 import { Box, Button, styled } from '@mui/material';
 import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
+import { Link } from 'react-router-dom';
 
 export const StyledWraper = styled(Box)(() => ({
   width: '100%',
@@ -36,7 +37,7 @@ export const StyledText = styled('p')(() => ({
   padding: '0 180px',
 }));
 
-export const StyledButton = styled(Button)(() => ({
+export const StyledButton = styled(Link)(() => ({
   fontFamily: 'Inter',
   fontStyle: 'normal',
   fontWeight: '700',
@@ -45,7 +46,11 @@ export const StyledButton = styled(Button)(() => ({
   color: '#131316',
   textTransform: 'uppercase',
   backgroundColor: '#FFFFFF',
-  padding: '17px 0 17px 180px',
+  padding: '17px 0',
+  marginLeft: '180px',
+  textDecoration: 'none',
+  display: 'inline-flex',
+  alignItems: 'center',
 }));
 
 export const StyledButtonIcon = styled(KeyboardArrowRightOutlinedIcon)(() => ({
