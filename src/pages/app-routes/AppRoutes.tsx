@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { CssBaseline } from '@mui/material';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -7,6 +7,7 @@ import {
   Route,
   Routes,
   Navigate,
+  useLocation,
 } from 'react-router-dom';
 import store, { persistor } from '../../store/store';
 import NavigationComponent from '../../components/navigation-component/NavigationComponent';
@@ -20,12 +21,23 @@ import FaqPage from '../faq-page/FaqPage';
 import LoginPage from '../login-page/LoginPage';
 import RegistrationPage from '../registration-page/RegistrationPage';
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 const AppRoutes: React.FC = () => {
   return (
     <Provider store={store}>
       <CssBaseline />
       <PersistGate persistor={persistor} loading={null} />
       <Router>
+        <ScrollToTop />
         <NavigationComponent />
         <Routes>
           <Route path={routes.HOME_ROUTE} element={<HomePage />} />

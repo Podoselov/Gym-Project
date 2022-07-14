@@ -13,12 +13,6 @@ const WorkoutsPage: React.FC = () => {
     (state) => state.trainingReducers.trainingId
   );
 
-  useEffect(() => {
-    return () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-  }, []);
-
   return (
     <>
       <StyledWraper>
