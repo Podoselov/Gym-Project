@@ -39,6 +39,7 @@ const WorkoutsPage: React.FC = () => {
                 textFirst={textFirst}
                 textSecond={textSecond}
                 idForScroll={id}
+                key={id}
               />
             ) : null;
           })}
@@ -52,6 +53,7 @@ const WorkoutsPage: React.FC = () => {
                 textFirst={textFirst}
                 textSecond={textSecond}
                 idForScroll={id}
+                key={id}
               />
             ) : null;
           })}

@@ -31,7 +31,7 @@ const SliderComponent: React.FC = () => {
         {SliderItemArray.map(({ name, imgUrl, id }) => {
           return (
             <SwiperSlide>
-              <SliderItem name={name} imgUrl={imgUrl} id={id} />
+              <SliderItem name={name} imgUrl={imgUrl} id={id} key={id} />
             </SwiperSlide>
           );
         })}

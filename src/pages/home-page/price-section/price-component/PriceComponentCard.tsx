@@ -43,7 +43,7 @@ const PriceComponentCard: React.FC<IProps> = ({
             {listItem.map((element) => {
               return (
                 <StyledMainItem>
-                  <CheckCircleIcon sx={{ marginRight: '10px' }} />
+                  <CheckCircleIcon sx={{ marginRight: '10px' }} key={name} />
                   {element}
                 </StyledMainItem>
               );

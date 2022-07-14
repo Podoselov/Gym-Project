@@ -28,7 +28,7 @@ const CommunityPage: React.FC = () => {
             <StyledList>
               {CommunityArray.map((element) => {
                 return (
-                  <ListItem>
+                  <ListItem key={element.name}>
                     <CommunityCardComponent
                       img={element.img}
                       text={element.text}
