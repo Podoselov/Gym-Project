@@ -14,7 +14,7 @@ export const StyledSpan = styled('span')(() => ({
   color: 'rgba(74, 226, 144, 1)',
 }));
 
-export const StyledHeading = styled('h1')(() => ({
+export const StyledHeading = styled('h1')(({ theme }) => ({
   fontFamily: 'Inter',
   fontStyle: 'normal',
   fontWeight: '800',
@@ -24,9 +24,14 @@ export const StyledHeading = styled('h1')(() => ({
   padding: '0 0 52px',
   margin: '0',
   textAlign: 'center',
+  [theme.breakpoints.down('lg')]: {
+    fontSize: '24px',
+    textAlign: 'left',
+    padding: '0 0 0 20px',
+  },
 }));
 
-export const StyledText = styled('p')(() => ({
+export const StyledText = styled('p')(({ theme }) => ({
   fontFamily: 'Open Sans',
   fontStyle: 'normal',
   fontWeight: '400',
@@ -35,9 +40,15 @@ export const StyledText = styled('p')(() => ({
   color: '#595962',
   marginBottom: '32px',
   padding: '0 180px',
+  [theme.breakpoints.down('lg')]: {
+    fontSize: '14px',
+    lineHeight: '150%',
+    textAlign: 'left',
+    padding: '0',
+  },
 }));
 
-export const StyledButton = styled(Link)(() => ({
+export const StyledButton = styled(Link)(({ theme }) => ({
   fontFamily: 'Inter',
   fontStyle: 'normal',
   fontWeight: '700',
@@ -51,6 +62,9 @@ export const StyledButton = styled(Link)(() => ({
   textDecoration: 'none',
   display: 'inline-flex',
   alignItems: 'center',
+  [theme.breakpoints.down('lg')]: {
+    marginLeft: '0',
+  },
 }));
 
 export const StyledButtonIcon = styled(KeyboardArrowRightOutlinedIcon)(() => ({

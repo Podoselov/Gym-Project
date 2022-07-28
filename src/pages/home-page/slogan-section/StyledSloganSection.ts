@@ -1,4 +1,4 @@
-import { Box, Button, Container, styled } from '@mui/material';
+import { Box, Container, styled } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 export const StyledWraper = styled(Box)(() => ({
@@ -11,8 +11,8 @@ export const StyledWraper = styled(Box)(() => ({
 export const StyledContainer = styled(Container)(({ theme }) => ({
   maxWidth: '1038px',
   [theme.breakpoints.down('lg')]: {
-    paddingLeft: '20px',
-    paddingRight: '20px',
+    paddingLeft: '21px',
+    paddingRight: '21px',
   },
 }));
 
@@ -28,6 +28,7 @@ export const StyledContentBox = styled(Box)(({ theme }) => ({
   marginLeft: '10%',
   [theme.breakpoints.down('lg')]: {
     justifyContent: 'center',
+    marginLeft: '0',
   },
 }));
 
@@ -62,6 +63,7 @@ export const StyledHeading = styled('h1')(({ theme }) => ({
     fontSize: '34px',
     lineHeight: '150%',
     paddingBottom: '12px',
+    paddingTop: '80px',
   },
 }));
 
@@ -75,7 +77,9 @@ export const StyledText = styled('p')(({ theme }) => ({
   marginBottom: '32px',
   [theme.breakpoints.down('lg')]: {
     fontSize: '16px',
-    marginBottom: '12px',
+    marginTop: '0',
+    marginBottom: '21px',
+    lineHeight: '150%',
   },
 }));
 
@@ -99,7 +103,7 @@ export const StyledButton = styled(Link)(() => ({
   },
 }));
 
-export const StyledImg = styled('img')(() => ({
+export const StyledImg = styled('img')(({ theme }) => ({
   maxWidth: '500px',
   height: '100%',
   objectFit: 'cover',
@@ -107,4 +111,7 @@ export const StyledImg = styled('img')(() => ({
   top: '0',
   left: '450px',
   zIndex: '-999',
+  [theme.breakpoints.down('lg')]: {
+    display: 'none',
+  },
 }));

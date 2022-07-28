@@ -1,12 +1,12 @@
 import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper';
+import { SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper';
 import {
+  StyledBox,
   StyledHeading,
   StyledHeadingWraper,
+  StyledSwiper,
   StyledWraper,
-  StyledBox,
-  StyledSwiperWraper,
 } from './StyledCommunityComponent';
 import { StyledSpan } from '../mission-section/StyledMissionSection';
 import SwiperButtonPrev from '../slider-section/slider-item/swiper-button/SwiperButtonPrev';
@@ -28,12 +28,24 @@ const CommunityComponent: React.FC = () => {
           <SwiperButtonNext idSlider={false} />
         </StyledBox>
       </StyledHeadingWraper>
-      <Swiper
-        modules={[Navigation]}
+      <StyledSwiper
+        modules={[Navigation, Pagination]}
         navigation={{ nextEl: '#swiper-forward', prevEl: '#swiper-back' }}
-        slidesPerView={2.5}
-        autoHeight
-        spaceBetween={30}
+        pagination={{
+          clickable: true,
+        }}
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+            autoHeight: false,
+            initialSlide: 0,
+          },
+          640: {
+            slidesPerView: 2.5,
+            autoHeight: true,
+            spaceBetween: 30,
+          },
+        }}
       >
         {CommunityArray.map((element) => {
           return (
@@ -46,7 +58,7 @@ const CommunityComponent: React.FC = () => {
             </SwiperSlide>
           );
         })}
-      </Swiper>
+      </StyledSwiper>
     </StyledWraper>
   );
 };

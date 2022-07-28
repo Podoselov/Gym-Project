@@ -6,11 +6,18 @@ export const StyledWraper = styled(Box)(() => ({
   margin: '0',
   padding: '0',
   backgroundColor: 'rgba(255, 255, 255, 1)',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
 }));
 
-export const StyledContainer = styled(Container)(() => ({
+export const StyledContainer = styled(Container)(({ theme }) => ({
   marginTop: '71px',
   marginBottom: '189px',
+  [theme.breakpoints.down('lg')]: {
+    display: 'none',
+  },
 }));
 
 export const StyledIconButton = styled(IconButton)(() => ({
@@ -24,7 +31,7 @@ export const StyledIconButton = styled(IconButton)(() => ({
   },
 }));
 
-export const StyledHeading = styled('h1')(() => ({
+export const StyledHeading = styled('h1')(({ theme }) => ({
   fontFamily: 'Inter',
   fontStyle: 'normal',
   fontWeight: '800',
@@ -33,6 +40,10 @@ export const StyledHeading = styled('h1')(() => ({
   textAlign: 'center',
   color: '#131316',
   margin: '90px 0 115px',
+  [theme.breakpoints.down('lg')]: {
+    fontSize: '24px',
+    margin: '81px 0 53px',
+  },
 }));
 
 export const StyledSwiper = styled(Swiper)(() => ({

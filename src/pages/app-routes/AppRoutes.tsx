@@ -20,6 +20,7 @@ import CommunityPage from '../community-page/CommunityPage';
 import FaqPage from '../faq-page/FaqPage';
 import LoginPage from '../login-page/LoginPage';
 import RegistrationPage from '../registration-page/RegistrationPage';
+import StyledImgBox from '../img-box/StyledImgBox';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -39,6 +40,7 @@ const AppRoutes: React.FC = () => {
       <Router>
         <ScrollToTop />
         <NavigationComponent />
+        <StyledImgBox />
         <Routes>
           <Route path={routes.HOME_ROUTE} element={<HomePage />} />
           <Route path={routes.ABOUT_ROUTE} element={<AboutPage />} />

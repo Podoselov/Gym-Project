@@ -3,11 +3,10 @@ import SloganSection from './slogan-section/SloganSection';
 import MissionSection from './mission-section/MissionSection';
 import SliderComponent from './slider-section/SliderComponent';
 import PriceComponent from './price-section/PriceComponent';
+import { StyledWraper } from './StyledHomePage';
 import CommunityComponent from './community-section/CommunityComponent';
 import FAQSectionComponent from './faq-section/FAQSectionComponent';
 import FooterComponent from './footer-section/FooterComponent';
-import MainFooterComponent from './footer-section/main-footer/MainFooterComponent';
-import { StyledWraper } from './StyledHomePage';
 
 const HomePage: React.FC = () => {
   return (
@@ -21,7 +20,7 @@ const HomePage: React.FC = () => {
       <CommunityComponent />
       <FAQSectionComponent />
       <FooterComponent />
-      <MainFooterComponent />
+      {/* <MainFooterComponent /> */}
     </>
   );
 };

@@ -1,4 +1,4 @@
-import { Accordion, Box, Container, styled, Typography } from '@mui/material';
+import { Accordion, Box, styled, Typography } from '@mui/material';
 
 export const StyledWraper = styled(Box)(() => ({
   width: '100%',
@@ -13,7 +13,7 @@ export const StyledContainer = styled(Box)(() => ({
   maxWidth: '768px',
 }));
 
-export const StyledHeading = styled('h1')(() => ({
+export const StyledHeading = styled('h1')(({ theme }) => ({
   fontFamily: 'Inter',
   fontStyle: 'normal',
   fontWeight: '800',
@@ -22,6 +22,10 @@ export const StyledHeading = styled('h1')(() => ({
   color: '#131316',
   textAlign: 'center',
   marginBottom: '92px',
+  [theme.breakpoints.down('lg')]: {
+    fontSize: '24px',
+    marginBottom: '30px',
+  },
 }));
 
 export const StyledTypography = styled(Typography)(() => ({

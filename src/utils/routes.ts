@@ -7,5 +7,6 @@ export enum routes {
   FAQ_ROUTE = '/faq',
   LOGIN_ROUTE = '/login',
   SIGN_UP_ROUTE = '/sign-up',
+  MENU_ROUTE = '/menu',
   CARD_ROUTE = '/workouts/:id',
 }

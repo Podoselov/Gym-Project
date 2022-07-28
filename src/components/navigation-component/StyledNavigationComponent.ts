@@ -1,13 +1,16 @@
 import { Box, IconButton, List, ListItem, styled } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-export const StyledWraper = styled(Box)(() => ({
+export const StyledWraper = styled(Box)(({ theme }) => ({
   width: '100%',
   height: '100%',
   margin: '0px',
   padding: '0px',
   color: 'rgba(255, 255, 255, 0.9)',
   backgroundColor: 'rgba(19, 19, 22, 1)',
+  [theme.breakpoints.down('lg')]: {
+    backgroundColor: '#111111',
+  },
 }));
 
 export const StyledContainer = styled(Box)(({ theme }) => ({
@@ -26,20 +29,29 @@ export const StyledNavBar = styled('nav')(() => ({
   alignItems: 'center',
 }));
 
-export const StyledList = styled(List)(({ theme }) => ({
+export const StyledList = styled(List)(() => ({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
+}));
+
+export const StyledListItem = styled(ListItem)(({ theme }) => ({
+  padding: '23px 0',
   [theme.breakpoints.down('lg')]: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    position: 'absolute',
+    top: '0',
+    right: '0',
+    zIndex: '999',
+    backgroundColor: '#111111',
+    minWidth: '320px',
+    padding: '84px 0 62px',
     display: 'none',
   },
 }));
 
-export const StyledListItem = styled(ListItem)(() => ({
-  padding: '23px 0',
-}));
-
-export const StyledLink = styled(Link)(() => ({
+export const StyledLink = styled(Link)(({ theme }) => ({
   display: 'block',
   fontFamily: 'Inter',
   fontStyle: 'normal',
@@ -54,6 +66,12 @@ export const StyledLink = styled(Link)(() => ({
     borderRadius: '1px',
     color: 'rgba(0, 0, 0, 1)',
   },
+  [theme.breakpoints.down('lg')]: {
+    fontWeight: '800',
+    fontSize: '24px',
+    lineHeight: '150%',
+    marginBottom: '10px',
+  },
 }));
 
 export const StyledLogin = styled(Box)(({ theme }) => ({
@@ -67,6 +85,7 @@ export const StyledLogin = styled(Box)(({ theme }) => ({
 export const StyledMenuButton = styled(IconButton)(({ theme }) => ({
   display: 'none',
   color: 'rgba(255, 255, 255, 0.9)',
+  zIndex: '999',
   [theme.breakpoints.down('lg')]: {
     display: 'block',
   },

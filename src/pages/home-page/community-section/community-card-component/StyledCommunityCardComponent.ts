@@ -1,4 +1,4 @@
-import { styled, Box } from '@mui/material';
+import { Box, styled } from '@mui/material';
 
 export const StyledCardWraper = styled(Box)(() => ({
   height: '480px',
@@ -14,7 +14,7 @@ export const StyledTextWraper = styled(Box)(() => ({
   left: '0',
 }));
 
-export const StyledText = styled('p')(() => ({
+export const StyledText = styled('p')(({ theme }) => ({
   fontFamily: 'Open Sans',
   fontStyle: 'italic',
   fontWeight: '400',
@@ -22,6 +22,10 @@ export const StyledText = styled('p')(() => ({
   lineHeight: '26px',
   color: '#FFFFFF',
   padding: '0 20px',
+  [theme.breakpoints.down('lg')]: {
+    fontSize: '14px',
+    padding: '0 10px',
+  },
 }));
 
 export const StyledName = styled('p')(() => ({

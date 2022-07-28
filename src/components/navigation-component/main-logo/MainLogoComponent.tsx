@@ -1,15 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Box } from '@mui/material';
-import { StyledBox } from './StyledMainLogo';
+import { StyledBox, StyledLink } from './StyledMainLogo';
 import { routes } from '../../../utils/routes';
 
 const MainLogoComponent: React.FC = () => {
   return (
-    <Link to={routes.HOME_ROUTE}>
+    <StyledLink to={routes.HOME_ROUTE}>
       <StyledBox>
         <svg
-          style={{ position: 'absolute', bottom: '10px', left: '0px' }}
+          style={{
+            position: 'absolute',
+            bottom: '10px',
+            left: '0px',
+            zIndex: '999',
+          }}
           width="19"
           height="16"
           viewBox="0 0 19 16"
@@ -22,7 +26,7 @@ const MainLogoComponent: React.FC = () => {
           />
         </svg>
         <svg
-          style={{ position: 'relative', top: '5px' }}
+          style={{ position: 'relative', top: '5px', zIndex: '999' }}
           width="19"
           height="16"
           viewBox="0 0 19 16"
@@ -35,7 +39,9 @@ const MainLogoComponent: React.FC = () => {
           />
         </svg>
       </StyledBox>
-      <Box sx={{ display: 'inline-block', position: 'relative' }}>
+      <Box
+        sx={{ display: 'inline-block', position: 'relative', zIndex: '999' }}
+      >
         <svg
           width="38"
           height="15"
@@ -57,7 +63,7 @@ const MainLogoComponent: React.FC = () => {
           />
         </svg>
         <svg
-          style={{ position: 'relative', bottom: '4px' }}
+          style={{ position: 'relative', bottom: '4px', zIndex: '999' }}
           width="18"
           height="8"
           viewBox="0 0 18 8"
@@ -74,7 +80,7 @@ const MainLogoComponent: React.FC = () => {
           />
         </svg>
       </Box>
-    </Link>
+    </StyledLink>
   );
 };
 
