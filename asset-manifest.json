@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Gym-Project/static/css/main.69cadcf6.css",
-    "main.js": "/Gym-Project/static/js/main.117e75e9.js",
+    "main.css": "/Gym-Project/static/css/main.cd37ee1d.css",
+    "main.js": "/Gym-Project/static/js/main.f14f8461.js",
     "static/media/boxerTraining.png": "/Gym-Project/static/media/boxerTraining.24becee37e554eba9609.png",
     "static/media/loginModalImg.png": "/Gym-Project/static/media/loginModalImg.61fef048dc738e6ad6e6.png",
     "static/media/heroImageHeader.png": "/Gym-Project/static/media/heroImageHeader.4a80fc61f74bd555e079.png",
@@ -15,11 +15,11 @@
     "static/media/crossfit.png": "/Gym-Project/static/media/crossfit.8abd2d5e5b9c4c8d10fd.png",
     "static/media/boxingLogo.png": "/Gym-Project/static/media/boxingLogo.88c60e7e825631222d49.png",
     "index.html": "/Gym-Project/index.html",
-    "main.69cadcf6.css.map": "/Gym-Project/static/css/main.69cadcf6.css.map",
-    "main.117e75e9.js.map": "/Gym-Project/static/js/main.117e75e9.js.map"
+    "main.cd37ee1d.css.map": "/Gym-Project/static/css/main.cd37ee1d.css.map",
+    "main.f14f8461.js.map": "/Gym-Project/static/js/main.f14f8461.js.map"
   },
   "entrypoints": [
-    "static/css/main.69cadcf6.css",
-    "static/js/main.117e75e9.js"
+    "static/css/main.cd37ee1d.css",
+    "static/js/main.f14f8461.js"
   ]
 }
