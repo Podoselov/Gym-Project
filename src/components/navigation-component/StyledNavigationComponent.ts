@@ -1,4 +1,4 @@
-import { Box, IconButton, List, ListItem, styled } from '@mui/material';
+import { Box, List, ListItem, styled } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 export const StyledWraper = styled(Box)(({ theme }) => ({
@@ -82,7 +82,7 @@ export const StyledLogin = styled(Box)(({ theme }) => ({
   },
 }));
 
-export const StyledMenuButton = styled(IconButton)(({ theme }) => ({
+export const StyledMenuButton = styled(Link)(({ theme }) => ({
   display: 'none',
   color: 'rgba(255, 255, 255, 0.9)',
   zIndex: '999',

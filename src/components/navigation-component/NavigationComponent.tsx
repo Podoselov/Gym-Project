@@ -2,16 +2,16 @@ import React from 'react';
 import { Box } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import {
-  StyledWraper,
-  StyledNavBar,
   StyledContainer,
+  StyledLink,
   StyledList,
   StyledListItem,
-  StyledLink,
-  StyledLogInButton,
-  StyledSignInButton,
   StyledLogin,
+  StyledLogInButton,
   StyledMenuButton,
+  StyledNavBar,
+  StyledSignInButton,
+  StyledWraper,
 } from './StyledNavigationComponent';
 import MainLogoComponent from './main-logo/MainLogoComponent';
 import { routes } from '../../utils/routes';
@@ -42,7 +42,7 @@ const NavigationComponent: React.FC = () => {
               Sign in
             </StyledSignInButton>
           </StyledLogin>
-          <StyledMenuButton>
+          <StyledMenuButton to={routes.MENU_ROUTE}>
             <MenuIcon />
           </StyledMenuButton>
         </StyledNavBar>

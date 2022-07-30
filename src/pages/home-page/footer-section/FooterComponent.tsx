@@ -1,10 +1,11 @@
 import React from 'react';
 import {
-  StyledWraper,
-  StyledHeading,
-  StyledTypography,
   StyledContainer,
+  StyledHeading,
   StyledImg,
+  StyledLogoWraper,
+  StyledTypography,
+  StyledWraper,
 } from './StyledFooterComponent';
 import {
   StyledButton,
@@ -12,6 +13,7 @@ import {
 } from '../slogan-section/StyledSloganSection';
 import img from './footer-section-img/footerLogo.png';
 import { routes } from '../../../utils/routes';
+import MainLogoComponent from '../../../components/navigation-component/main-logo/MainLogoComponent';
 
 const FooterComponent: React.FC = () => {
   return (
@@ -27,6 +29,9 @@ const FooterComponent: React.FC = () => {
           Nothing more, nothing less.
         </StyledTypography>
         <StyledButton to={routes.LOGIN_ROUTE}>JOIN NOW</StyledButton>
+        <StyledLogoWraper>
+          <MainLogoComponent />
+        </StyledLogoWraper>
       </StyledContainer>
     </StyledWraper>
   );

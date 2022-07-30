@@ -4,9 +4,9 @@ import { CssBaseline } from '@mui/material';
 import { PersistGate } from 'redux-persist/integration/react';
 import {
   BrowserRouter as Router,
+  Navigate,
   Route,
   Routes,
-  Navigate,
   useLocation,
 } from 'react-router-dom';
 import store, { persistor } from '../../store/store';
@@ -21,6 +21,7 @@ import FaqPage from '../faq-page/FaqPage';
 import LoginPage from '../login-page/LoginPage';
 import RegistrationPage from '../registration-page/RegistrationPage';
 import StyledImgBox from '../img-box/StyledImgBox';
+import NavigationMenuComponent from '../../components/navigation-component/navigation-menu/NavigationMenuComponent';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -50,6 +51,10 @@ const AppRoutes: React.FC = () => {
           <Route path={routes.FAQ_ROUTE} element={<FaqPage />} />
           <Route path={routes.LOGIN_ROUTE} element={<LoginPage />} />
           <Route path={routes.SIGN_UP_ROUTE} element={<RegistrationPage />} />
+          <Route
+            path={routes.MENU_ROUTE}
+            element={<NavigationMenuComponent />}
+          />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Router>

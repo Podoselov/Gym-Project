@@ -13,9 +13,13 @@ export const StyledWraper = styled(Box)(({ theme }) => ({
   },
 }));
 
-export const StyledHeadingWraper = styled(Box)(() => ({
+export const StyledHeadingWraper = styled(Box)(({ theme }) => ({
   display: 'inline-block',
   marginRight: '112px',
+  [theme.breakpoints.down('lg')]: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
 }));
 
 export const StyledSwiper = styled(Swiper)(({ theme }) => ({

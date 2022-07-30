@@ -1,10 +1,14 @@
 import { Box, List, styled } from '@mui/material';
 
-export const StyledWraper = styled(Box)(() => ({
+export const StyledWraper = styled(Box)(({ theme }) => ({
   width: '100%',
   margin: '0',
   padding: '0',
   backgroundColor: '#000000',
+  display: 'block',
+  [theme.breakpoints.down('lg')]: {
+    display: 'none',
+  },
 }));
 
 export const StyledContainer = styled(Box)(() => ({
