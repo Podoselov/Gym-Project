@@ -16,10 +16,13 @@ export const StyledContainer = styled(Container)(({ theme }) => ({
   },
 }));
 
-export const StyledBox = styled(Box)(() => ({
+export const StyledBox = styled(Box)(({ theme }) => ({
   maxWidth: '515px',
   zIndex: '22',
   marginBottom: '174px',
+  [theme.breakpoints.down('lg')]: {
+    marginBottom: '0px',
+  },
 }));
 
 export const StyledContentBox = styled(Box)(({ theme }) => ({

@@ -2,18 +2,23 @@ import * as React from 'react';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 import Checkbox from '@mui/material/Checkbox';
+import { IconButton } from '@mui/material';
 import {
-  StyledForm,
-  StyledName,
-  StyledMailField,
-  StyledPassField,
-  StyledFormControlLabel,
-  StyledLink,
-  StyledText,
-  StyledButton,
   StyledBox,
+  StyledButton,
   StyledButtonFacebook,
   StyledButtonGmail,
+  StyledFacebookIcon,
+  StyledFlexBox,
+  StyledForm,
+  StyledFormControlLabel,
+  StyledGoogleIcon,
+  StyledLink,
+  StyledMailField,
+  StyledName,
+  StyledPassField,
+  StyledSocialButtonWraper,
+  StyledText,
 } from './StyledLoginForm';
 
 interface MyFormValues {
@@ -48,19 +53,27 @@ export const LoginForm: React.FC<{}> = () => {
             <StyledMailField id="firstName" name="nameMail" />
             <StyledName sx={{ margin: '0 0 10px 0' }}>PASSWORD</StyledName>
             <StyledPassField id="password" name="password" />
-            <StyledBox
-              sx={{ display: 'flex', justifyContent: 'space-between' }}
-            >
+            <StyledBox>
               <StyledFormControlLabel
                 control={<Checkbox name="remember" />}
                 label="REMEMBER ME"
               />
               <StyledLink href="!#">FORGOT PASSWORD?</StyledLink>
             </StyledBox>
-            <StyledButton type="submit">sing up</StyledButton>
-            <StyledText>or</StyledText>
-            <StyledButtonFacebook>login with facebook</StyledButtonFacebook>
-            <StyledButtonGmail>login with gmail</StyledButtonGmail>
+            <StyledFlexBox>
+              <StyledButton type="submit">sing up</StyledButton>
+              <StyledText>or</StyledText>
+              <StyledButtonFacebook>login with facebook</StyledButtonFacebook>
+              <StyledButtonGmail>login with gmail</StyledButtonGmail>
+            </StyledFlexBox>
+            <StyledSocialButtonWraper>
+              <IconButton size="large">
+                <StyledFacebookIcon color="primary" />
+              </IconButton>
+              <IconButton size="large">
+                <StyledGoogleIcon color="error" />
+              </IconButton>
+            </StyledSocialButtonWraper>
           </StyledForm>
         )}
       </Formik>

@@ -1,19 +1,23 @@
 import React from 'react';
+import { IconButton } from '@mui/material';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 import Checkbox from '@mui/material/Checkbox';
 import {
-  StyledForm,
-  StyledName,
-  StyledMailField,
-  StyledPassField,
-  StyledFormControlLabel,
-  StyledLink,
-  StyledText,
-  StyledButton,
   StyledBox,
+  StyledButton,
   StyledButtonFacebook,
   StyledButtonGmail,
+  StyledFacebookIcon,
+  StyledFlexBox,
+  StyledForm,
+  StyledFormControlLabel,
+  StyledGoogleIcon,
+  StyledMailField,
+  StyledName,
+  StyledPassField,
+  StyledSocialButtonWraper,
+  StyledText,
 } from '../form-login-component/StyledLoginForm';
 
 interface SignInFormValues {
@@ -66,10 +70,20 @@ const SignInFormComponent: React.FC<{}> = () => {
                 label="REMEMBER ME"
               />
             </StyledBox>
-            <StyledButton type="submit">get started</StyledButton>
-            <StyledText>or</StyledText>
-            <StyledButtonFacebook>login with facebook</StyledButtonFacebook>
-            <StyledButtonGmail>login with gmail</StyledButtonGmail>
+            <StyledFlexBox>
+              <StyledButton type="submit">get started</StyledButton>
+              <StyledText>or</StyledText>
+              <StyledButtonFacebook>login with facebook</StyledButtonFacebook>
+              <StyledButtonGmail>login with gmail</StyledButtonGmail>
+            </StyledFlexBox>
+            <StyledSocialButtonWraper>
+              <IconButton size="large">
+                <StyledFacebookIcon color="primary" />
+              </IconButton>
+              <IconButton size="large">
+                <StyledGoogleIcon color="error" />
+              </IconButton>
+            </StyledSocialButtonWraper>
           </StyledForm>
         )}
       </Formik>
