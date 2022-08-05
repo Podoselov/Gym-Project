@@ -1,21 +1,23 @@
 import React from 'react';
 import {
-  StyledWraper,
-  StyledContainer,
   StyledBox,
-  StyledHeading,
-  StyledSpan,
   StyledButton,
-  StyledText,
-  StyledImg,
+  StyledContainer,
   StyledContentBox,
+  StyledHeading,
+  StyledImg,
+  StyledSpan,
+  StyledText,
+  StyledWraper,
 } from './StyledSloganSection';
 import img from './slogan-img/heroImageHeader.png';
 import { routes } from '../../../utils/routes';
+import StyledImgBox from '../../img-box/StyledImgBox';
 
 const SloganSection: React.FC = () => {
   return (
     <StyledWraper>
+      <StyledImgBox />
       <StyledContainer>
         <StyledContentBox>
           <StyledBox>

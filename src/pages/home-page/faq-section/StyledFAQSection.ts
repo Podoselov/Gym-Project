@@ -28,7 +28,7 @@ export const StyledHeading = styled('h1')(({ theme }) => ({
   },
 }));
 
-export const StyledTypography = styled(Typography)(() => ({
+export const StyledTypography = styled(Typography)(({ theme }) => ({
   fontFamily: 'Inter',
   fontStyle: 'normal',
   fontWeight: '700',
@@ -36,9 +36,13 @@ export const StyledTypography = styled(Typography)(() => ({
   lineHeight: '28px',
   color: '#131316',
   padding: '20px 0',
+  [theme.breakpoints.down('lg')]: {
+    fontSize: '16px',
+    padding: '5px 0',
+  },
 }));
 
-export const StyledDetailsTypography = styled(Typography)(() => ({
+export const StyledDetailsTypography = styled(Typography)(({ theme }) => ({
   fontFamily: 'Open Sans',
   fontStyle: 'normal',
   fontWeight: '400',
@@ -46,6 +50,10 @@ export const StyledDetailsTypography = styled(Typography)(() => ({
   lineHeight: '26px',
   color: '#595962',
   paddingRight: '90px',
+  [theme.breakpoints.down('lg')]: {
+    fontSize: '14px',
+    paddingRight: '0px',
+  },
 }));
 
 export const StyledAccordion = styled(Accordion)(() => ({

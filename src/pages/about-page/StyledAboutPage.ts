@@ -11,7 +11,7 @@ export const StyledBox = styled(Box)(() => ({
   padding: '90px 0 55px',
 }));
 
-export const StyledImgContainer = styled(Container)(() => ({
+export const StyledImgContainer = styled(Container)(({ theme }) => ({
   position: 'relative',
   minHeight: '645px',
   marginBottom: '65px',
@@ -22,5 +22,9 @@ export const StyledImgContainer = styled(Container)(() => ({
     objectFit: 'cover',
     top: '0',
     left: '0',
+  },
+  [theme.breakpoints.down('lg')]: {
+    marginBottom: '0',
+    minHeight: '205px',
   },
 }));

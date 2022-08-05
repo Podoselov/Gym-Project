@@ -1,11 +1,14 @@
 import { Box, styled } from '@mui/material';
 
-export const StyledWorkoutsWraper = styled(Box)(() => ({
+export const StyledWorkoutsWraper = styled(Box)(({ theme }) => ({
   display: 'flex',
   marginBottom: '100px',
+  [theme.breakpoints.down('lg')]: {
+    flexDirection: 'column',
+  },
 }));
 
-export const StyledImgWraper = styled(Box)(() => ({
+export const StyledImgWraper = styled(Box)(({ theme }) => ({
   minHeight: '420px',
   minWidth: '450px',
   position: 'relative',
@@ -13,6 +16,11 @@ export const StyledImgWraper = styled(Box)(() => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'flex-end',
+  [theme.breakpoints.down('lg')]: {
+    minHeight: '266px',
+    minWidth: '275px',
+    marginRight: '0',
+  },
   '& img': {
     position: 'absolute',
     width: '100%',
@@ -36,10 +44,17 @@ export const StyledImgWraper = styled(Box)(() => ({
     width: '100%',
     padding: '29px 0',
     margin: '0',
+    [theme.breakpoints.down('lg')]: {
+      fontSize: '20px',
+      lineHeight: '150%',
+      padding: '18px 0',
+      backgroundColor: 'rgba(255, 255, 255, 0.7)',
+      color: '#000',
+    },
   },
 }));
 
-export const StyledText = styled('p')(() => ({
+export const StyledText = styled('p')(({ theme }) => ({
   fontFamily: 'Inter',
   fontStyle: 'normal',
   fontWeight: '400',
@@ -48,6 +63,9 @@ export const StyledText = styled('p')(() => ({
   color: '#000000',
   marginBottom: '10px',
   display: 'inline-block',
+  [theme.breakpoints.down('lg')]: {
+    fontSize: '14px',
+  },
 }));
 
 export const StyledBox = styled(Box)(() => ({
