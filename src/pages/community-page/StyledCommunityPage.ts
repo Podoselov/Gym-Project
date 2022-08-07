@@ -1,9 +1,12 @@
 import { Box, Button, List, styled } from '@mui/material';
 
-export const StyledHeaderWraper = styled(Box)(() => ({
+export const StyledHeaderWraper = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   paddingTop: '90px',
+  [theme.breakpoints.down('lg')]: {
+    paddingTop: '50px',
+  },
 }));
 
 export const StyledWraper = styled(Box)(() => ({
@@ -24,9 +27,12 @@ export const StyledButtonWraper = styled(Box)(() => ({
   marginBottom: '50px',
 }));
 
-export const StyledList = styled(List)(() => ({
+export const StyledList = styled(List)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'space-between',
+  [theme.breakpoints.down('lg')]: {
+    flexDirection: 'column',
+  },
 }));
 
 export const StyledButton = styled(Button)(() => ({

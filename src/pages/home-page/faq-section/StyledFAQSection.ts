@@ -1,12 +1,15 @@
 import { Accordion, Box, styled, Typography } from '@mui/material';
 
-export const StyledWraper = styled(Box)(() => ({
+export const StyledWraper = styled(Box)(({ theme }) => ({
   width: '100%',
   margin: '0',
   padding: '0',
   backgroundColor: 'rgba(255, 255, 255, 1)',
   display: 'flex',
   justifyContent: 'center',
+  [theme.breakpoints.down('lg')]: {
+    paddingTop: '50px',
+  },
 }));
 
 export const StyledContainer = styled(Box)(() => ({
@@ -25,6 +28,7 @@ export const StyledHeading = styled('h1')(({ theme }) => ({
   [theme.breakpoints.down('lg')]: {
     fontSize: '24px',
     marginBottom: '30px',
+    marginTop: '0px',
   },
 }));
 

@@ -5,6 +5,7 @@ export const StyledWorkoutsWraper = styled(Box)(({ theme }) => ({
   marginBottom: '100px',
   [theme.breakpoints.down('lg')]: {
     flexDirection: 'column',
+    marginBottom: '30px',
   },
 }));
 

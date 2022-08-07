@@ -3,19 +3,19 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { Box } from '@mui/material';
 import {
   StyledBox,
-  StyledName,
-  StyledPriceContainer,
-  StyledPriceText,
+  StyledButton,
+  StyledButtonWraper,
   StyledList,
   StyledListItem,
-  StyledButton,
   StyledMainBox,
   StyledMainButton,
   StyledMainItem,
   StyledMainName,
   StyledMainPriceContainer,
   StyledMainPriceText,
-  StyledButtonWraper,
+  StyledName,
+  StyledPriceContainer,
+  StyledPriceText,
 } from './StyledPriceComponent';
 import { routes } from '../../../../utils/routes';
 
@@ -42,8 +42,8 @@ const PriceComponentCard: React.FC<IProps> = ({
           <StyledList>
             {listItem.map((element) => {
               return (
-                <StyledMainItem>
-                  <CheckCircleIcon sx={{ marginRight: '10px' }} key={name} />
+                <StyledMainItem key={Math.floor(Math.random() * 1000) + 1}>
+                  <CheckCircleIcon sx={{ marginRight: '10px' }} />
                   {element}
                 </StyledMainItem>
               );
@@ -63,7 +63,7 @@ const PriceComponentCard: React.FC<IProps> = ({
           <StyledList>
             {listItem.map((element) => {
               return (
-                <StyledListItem>
+                <StyledListItem key={Math.floor(Math.random() * 1000) + 1}>
                   <CheckCircleIcon sx={{ marginRight: '10px' }} />
                   {element}
                 </StyledListItem>

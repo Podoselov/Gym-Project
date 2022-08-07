@@ -26,8 +26,8 @@ export const StyledHeading = styled('h1')(({ theme }) => ({
   textAlign: 'center',
   [theme.breakpoints.down('lg')]: {
     fontSize: '24px',
-    textAlign: 'left',
-    padding: '0 0 0 20px',
+    textAlign: 'center',
+    padding: '0',
   },
 }));
 

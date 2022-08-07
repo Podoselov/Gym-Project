@@ -7,8 +7,11 @@ export const StyledWraper = styled(Box)(() => ({
   backgroundColor: 'rgba(255, 255, 255, 1)',
 }));
 
-export const StyledBox = styled(Box)(() => ({
+export const StyledBox = styled(Box)(({ theme }) => ({
   padding: '90px 0 55px',
+  [theme.breakpoints.down('lg')]: {
+    padding: '50px 0 10px',
+  },
 }));
 
 export const StyledImgContainer = styled(Container)(({ theme }) => ({

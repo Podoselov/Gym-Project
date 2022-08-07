@@ -6,5 +6,6 @@ export const StyledContainer = styled(Box)(({ theme }) => ({
   marginBottom: '333px',
   [theme.breakpoints.down('lg')]: {
     marginBottom: '20px',
+    marginTop: '0px',
   },
 }));

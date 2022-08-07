@@ -1,4 +1,4 @@
-import { Box, Container, styled } from '@mui/material';
+import { Box, Button, Container, styled } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-router-dom';
 
@@ -16,6 +16,14 @@ export const StyledWraper = styled(Box)(() => ({
 
 export const StyledContainer = styled(Box)(() => ({
   padding: '9px 20px',
+}));
+
+export const StyledButton = styled(Button)(() => ({
+  width: '24px',
+  height: '24px',
+  margin: '0',
+  padding: '0',
+  minWidth: 'auto',
 }));
 
 export const StyledCloseIcon = styled(CloseIcon)(() => ({

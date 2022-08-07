@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
+  StyledButton,
   StyledButtonContainer,
   StyledButtonLink,
   StyledButtonLogIn,
@@ -15,14 +16,18 @@ import MainLogoComponent from '../main-logo/MainLogoComponent';
 import { routes } from '../../../utils/routes';
 
 const NavigationMenuComponent: React.FC = () => {
+  const navigate = useNavigate();
+
+  const closeMenuIconClick = () => navigate(-1);
+
   return (
     <StyledWraper>
       <StyledContainer>
         <StyledHeaderWraper>
           <MainLogoComponent />
-          <Link to={routes.HOME_ROUTE}>
+          <StyledButton onClick={closeMenuIconClick}>
             <StyledCloseIcon />
-          </Link>
+          </StyledButton>
         </StyledHeaderWraper>
         <StyledContainerLink>
           <StyledMenuLink to={routes.HOME_ROUTE}>Home</StyledMenuLink>

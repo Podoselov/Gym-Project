@@ -10,6 +10,7 @@ export const StyledWraper = styled(Box)(({ theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
+    paddingTop: '50px',
   },
 }));
 
@@ -38,6 +39,7 @@ export const StyledHeading = styled('h1')(({ theme }) => ({
   [theme.breakpoints.down('lg')]: {
     fontSize: '24px',
     marginBottom: '53px',
+    marginTop: '0',
   },
 }));
 

@@ -9,7 +9,7 @@ export const StyledWraper = styled(Box)(({ theme }) => ({
   backgroundColor: 'rgba(255, 255, 255, 1)',
   [theme.breakpoints.down('lg')]: {
     flexDirection: 'column',
-    padding: '53px 0 0 0',
+    padding: '50px 0 0 0',
   },
 }));
 
@@ -19,6 +19,7 @@ export const StyledHeadingWraper = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down('lg')]: {
     display: 'flex',
     justifyContent: 'center',
+    marginRight: '0',
   },
 }));
 
@@ -67,7 +68,10 @@ export const StyledHeading = styled('h1')(({ theme }) => ({
   marginLeft: '103px',
   marginBottom: '347px',
   [theme.breakpoints.down('lg')]: {
+    display: 'block',
     fontSize: '24px',
-    marginBottom: '54px',
+    marginBottom: '28px',
+    marginLeft: '0',
+    textAlign: 'center',
   },
 }));

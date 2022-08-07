@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { jsx } from '@emotion/react';
 import {
   StyledBox,
@@ -12,8 +12,8 @@ import {
 } from './StyledLoginModal';
 import loginModalImg from './form-login-component/login-modal-img/loginModalImg.png';
 import MainLogoComponent from '../navigation-component/main-logo/MainLogoComponent';
-import { routes } from '../../utils/routes';
 import {
+  StyledButton,
   StyledCloseIcon,
   StyledHeaderWraper,
 } from '../navigation-component/navigation-menu/StyledNavigationMenuComponent';
@@ -29,14 +29,18 @@ const LoginModalComponent: React.FC<IProps> = ({
   secondHeading,
   formComponent,
 }) => {
+  const navigate = useNavigate();
+
+  const closeMenuIconClick = () => navigate(-1);
+
   return (
     <StyledWraper>
       <StyledHeaderWraperBox>
         <StyledHeaderWraper>
           <MainLogoComponent />
-          <Link to={routes.HOME_ROUTE}>
+          <StyledButton onClick={closeMenuIconClick}>
             <StyledCloseIcon />
-          </Link>
+          </StyledButton>
         </StyledHeaderWraper>
       </StyledHeaderWraperBox>
       <StyledBox>

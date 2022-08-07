@@ -49,7 +49,7 @@ const CommunityComponent: React.FC = () => {
       >
         {CommunityArray.map((element) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={element.name}>
               <CommunityCardComponent
                 img={element.img}
                 text={element.text}

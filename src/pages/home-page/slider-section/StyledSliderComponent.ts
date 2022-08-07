@@ -42,7 +42,7 @@ export const StyledHeading = styled('h1')(({ theme }) => ({
   margin: '90px 0 115px',
   [theme.breakpoints.down('lg')]: {
     fontSize: '24px',
-    margin: '81px 0 53px',
+    margin: '50px 0 28px',
   },
 }));
 
