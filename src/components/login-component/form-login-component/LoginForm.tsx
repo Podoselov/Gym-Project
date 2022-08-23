@@ -1,8 +1,14 @@
 import * as React from 'react';
+import { useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
 import Checkbox from '@mui/material/Checkbox';
 import { IconButton } from '@mui/material';
+import { useAppDispatch } from '../../../hooks/redux';
+import { loginUser } from '../../../store/reducers/trainingReducers';
+import { routes } from '../../../utils/routes';
 import {
   StyledBox,
   StyledButton,
@@ -24,30 +30,55 @@ import {
 interface MyFormValues {
   nameMail: string;
   password: string;
+  remember: boolean;
 }
 
 export const LoginForm: React.FC<{}> = () => {
+  const dispatch = useAppDispatch();
+
+  const navigate = useNavigate();
+
+  const addLoginUsertoState = useCallback((userValue: MyFormValues) => {
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, userValue.nameMail, userValue.password)
+      .then(({ user }) => {
+        dispatch(
+          loginUser({
+            nameMail: userValue.nameMail,
+            email: user.email,
+            id: user.uid,
+            remember: userValue.remember,
+          })
+        );
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   const SignupSchema = Yup.object().shape({
     nameMail: Yup.string().required('Please enter a valid email address.'),
-    password: Yup.string()
-      .required('Please enter a password.')
-      .min(8, 'Password is too short - should be 8 chars minimum.')
-      .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
+    password: Yup.string().required('Please enter a password.'),
   });
 
-  const initialValues: MyFormValues = { nameMail: '', password: '' };
+  const initialValues: MyFormValues = {
+    nameMail: '',
+    password: '',
+    remember: false,
+  };
 
   return (
     <div>
       <Formik
         initialValues={initialValues}
-        validationSchema={SignupSchema}
         onSubmit={(values, actions) => {
-          console.log(values);
+          addLoginUsertoState(values);
+          navigate(routes.HOME_ROUTE);
           actions.resetForm();
         }}
+        validationSchema={SignupSchema}
       >
-        {({ values }) => (
+        {({ values, handleChange }) => (
           <StyledForm>
             <StyledName>User name / email address</StyledName>
             <StyledMailField id="firstName" name="nameMail" />
@@ -55,7 +86,13 @@ export const LoginForm: React.FC<{}> = () => {
             <StyledPassField id="password" name="password" />
             <StyledBox>
               <StyledFormControlLabel
-                control={<Checkbox name="remember" />}
+                control={
+                  <Checkbox
+                    name="remember"
+                    checked={values.remember}
+                    onChange={handleChange}
+                  />
+                }
                 label="REMEMBER ME"
               />
               <StyledLink href="!#">FORGOT PASSWORD?</StyledLink>

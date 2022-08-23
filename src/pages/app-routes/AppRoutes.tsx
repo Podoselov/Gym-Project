@@ -21,6 +21,8 @@ import FaqPage from '../faq-page/FaqPage';
 import LoginPage from '../login-page/LoginPage';
 import RegistrationPage from '../registration-page/RegistrationPage';
 import NavigationMenuComponent from '../../components/navigation-component/navigation-menu/NavigationMenuComponent';
+import AccountePage from '../account-page/AccountePage';
+import '../../firebase';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -49,6 +51,7 @@ const AppRoutes: React.FC = () => {
           <Route path={routes.FAQ_ROUTE} element={<FaqPage />} />
           <Route path={routes.LOGIN_ROUTE} element={<LoginPage />} />
           <Route path={routes.SIGN_UP_ROUTE} element={<RegistrationPage />} />
+          <Route path={routes.ACCOUNT_ROUTE} element={<AccountePage />} />
           <Route
             path={routes.MENU_ROUTE}
             element={<NavigationMenuComponent />}

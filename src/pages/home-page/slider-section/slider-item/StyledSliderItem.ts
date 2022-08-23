@@ -17,6 +17,7 @@ export const StyledSwiper = styled(Swiper)(({ theme }) => ({
     maxWidth: '308px',
     '& .swiper-wrapper': {
       height: '335px',
+      width: '308px',
       display: 'grid',
       gridTemplateColumns: 'repeat(2,1fr)',
       gridTemplateRows: 'repeat(2,1fr)',

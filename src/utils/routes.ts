@@ -9,4 +9,5 @@ export enum routes {
   SIGN_UP_ROUTE = '/sign-up',
   MENU_ROUTE = '/menu',
   CARD_ROUTE = '/workouts/:id',
+  ACCOUNT_ROUTE = '/account',
 }

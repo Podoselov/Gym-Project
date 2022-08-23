@@ -1,21 +1,21 @@
 import React from 'react';
-import { SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper';
+import { SwiperSlide } from 'swiper/react';
 import SliderItemArray from './slider-item/SliderItemsArray';
 import {
   StyledContainer,
   StyledHeading,
   StyledWraper,
 } from './StyledSliderComponent';
-import SliderItem from './slider-item/SliderItem';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/grid';
-import SwiperButtonNext from './slider-item/swiper-button/SwiperButtonNext';
-import SwiperButtonPrev from './slider-item/swiper-button/SwiperButtonPrev';
 import { StyledSpan } from '../mission-section/StyledMissionSection';
 import { StyledSwiper } from './slider-item/StyledSliderItem';
+import SliderItem from './slider-item/SliderItem';
+import SwiperButtonPrev from './slider-item/swiper-button/SwiperButtonPrev';
+import SwiperButtonNext from './slider-item/swiper-button/SwiperButtonNext';
 
 const SliderComponent: React.FC = () => {
   return (
@@ -25,16 +25,18 @@ const SliderComponent: React.FC = () => {
         <StyledSpan>.</StyledSpan>
       </StyledHeading>
       <StyledSwiper
-        loop
         modules={[Pagination, Navigation]}
+        loop
         pagination={{
           clickable: true,
         }}
         breakpoints={{
           320: {
+            loop: false,
             autoHeight: false,
             slidesPerView: 2,
             initialSlide: 0,
+            slidesPerGroup: 2,
           },
           640: {
             slidesPerView: 4,

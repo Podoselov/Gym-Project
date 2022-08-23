@@ -9,7 +9,20 @@ export interface ITraining {
   productUrl: string;
 }
 
+export interface User {
+  nameMail: string;
+  email: string;
+  password: string;
+  remember: boolean;
+}
+
 export interface Training {
   training: ITraining[];
+  login: {
+    nameMail: string;
+    email: string;
+    id: string;
+    remember: boolean;
+  };
   trainingId?: '';
 }

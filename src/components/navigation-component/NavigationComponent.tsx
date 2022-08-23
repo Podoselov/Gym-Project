@@ -15,8 +15,18 @@ import {
 } from './StyledNavigationComponent';
 import MainLogoComponent from './main-logo/MainLogoComponent';
 import { routes } from '../../utils/routes';
+import { logoutUser } from '../../store/reducers/trainingReducers';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 
 const NavigationComponent: React.FC = () => {
+  const loginName = useAppSelector(
+    ({ trainingReducers }) => trainingReducers.login.nameMail
+  );
+
+  const dispatch = useAppDispatch();
+
+  const exitFromAccount = () => dispatch(logoutUser());
+
   return (
     <StyledWraper>
       <StyledContainer>
@@ -35,12 +45,28 @@ const NavigationComponent: React.FC = () => {
             </StyledListItem>
           </StyledList>
           <StyledLogin>
-            <StyledLogInButton to={routes.LOGIN_ROUTE}>
-              Log in
-            </StyledLogInButton>
-            <StyledSignInButton to={routes.SIGN_UP_ROUTE}>
-              Sign in
-            </StyledSignInButton>
+            {loginName.length > 0 ? (
+              <>
+                <StyledLogInButton to={routes.ACCOUNT_ROUTE}>
+                  Account
+                </StyledLogInButton>
+                <StyledSignInButton
+                  onClick={exitFromAccount}
+                  to={routes.HOME_ROUTE}
+                >
+                  Exit
+                </StyledSignInButton>
+              </>
+            ) : (
+              <>
+                <StyledLogInButton to={routes.LOGIN_ROUTE}>
+                  Log in
+                </StyledLogInButton>
+                <StyledSignInButton to={routes.SIGN_UP_ROUTE}>
+                  Sign in
+                </StyledSignInButton>
+              </>
+            )}
           </StyledLogin>
           <StyledMenuButton to={routes.MENU_ROUTE}>
             <MenuIcon />

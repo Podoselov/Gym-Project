@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export const StyledWraper = styled(Box)(() => ({
   width: '100%',
-  height: '100%',
+  minHeight: '100%',
   margin: '0',
   padding: '0',
   backgroundColor: 'rgba(17, 17, 17, 1)',

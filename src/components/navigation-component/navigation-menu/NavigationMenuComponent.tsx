@@ -1,10 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   StyledButton,
   StyledButtonContainer,
-  StyledButtonLink,
-  StyledButtonLogIn,
   StyledCloseIcon,
   StyledContainer,
   StyledContainerLink,
@@ -14,9 +12,19 @@ import {
 } from './StyledNavigationMenuComponent';
 import MainLogoComponent from '../main-logo/MainLogoComponent';
 import { routes } from '../../../utils/routes';
+import NavigationButtonComponent from './NavigationButtonComponent';
+import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
+import { logoutUser } from '../../../store/reducers/trainingReducers';
 
 const NavigationMenuComponent: React.FC = () => {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+
+  const loginName = useAppSelector(
+    ({ trainingReducers }) => trainingReducers.login.nameMail
+  );
+
+  const exitFromAccount = () => dispatch(logoutUser());
 
   const closeMenuIconClick = () => navigate(-1);
 
@@ -38,8 +46,22 @@ const NavigationMenuComponent: React.FC = () => {
           <StyledMenuLink to={routes.FAQ_ROUTE}>FAQ</StyledMenuLink>
         </StyledContainerLink>
         <StyledButtonContainer>
-          <StyledButtonLink to={routes.SIGN_UP_ROUTE}>SING UP</StyledButtonLink>
-          <StyledButtonLogIn to={routes.LOGIN_ROUTE}>LOG IN</StyledButtonLogIn>
+          {loginName.length > 0 ? (
+            <NavigationButtonComponent
+              nameButtonSignUp="Account"
+              nameButtonLogIn="Exit"
+              routesSignUp={routes.ACCOUNT_ROUTE}
+              routesLogIn={routes.HOME_ROUTE}
+              clickAction={exitFromAccount}
+            />
+          ) : (
+            <NavigationButtonComponent
+              nameButtonSignUp="Sign up"
+              nameButtonLogIn="Log in"
+              routesSignUp={routes.SIGN_UP_ROUTE}
+              routesLogIn={routes.LOGIN_ROUTE}
+            />
+          )}
         </StyledButtonContainer>
       </StyledContainer>
     </StyledWraper>
