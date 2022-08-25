@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledProgramTimeWraper } from './StyledProgramTimeComponent';
+import { StyledTimeContainer } from './StyledProgramTimeComponent';
 
 interface IProps {
   date: string;
@@ -9,9 +9,14 @@ interface IProps {
 
 const ProgramTimeComponent: React.FC<IProps> = ({ date, time, name }) => {
   return (
-    <StyledProgramTimeWraper>
+    <>
       <h2>MY CLASSES</h2>
-    </StyledProgramTimeWraper>
+      <StyledTimeContainer>
+        <p>{date}</p>
+        <p style={{ color: 'rgba(119, 233, 172, 1)' }}>{time}</p>
+        <p style={{ margin: '0' }}>{name}</p>
+      </StyledTimeContainer>
+    </>
   );
 };
 

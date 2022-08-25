@@ -1,5 +1,5 @@
 import { Box, Button, FormControlLabel, Link, styled } from '@mui/material';
-import { Field, Form } from 'formik';
+import { ErrorMessage, Field, Form } from 'formik';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import GoogleIcon from '@mui/icons-material/Google';
 
@@ -15,7 +15,7 @@ export const StyledName = styled('p')(({ theme }) => ({
   lineHeight: '18px',
   letterSpacing: '1px',
   textTransform: 'uppercase',
-  margin: '40px 0 10px 0',
+  margin: '20px 0 6px 0',
   [theme.breakpoints.down('lg')]: {
     color: '#fff',
   },
@@ -80,7 +80,7 @@ export const StyledLink = styled(Link)(({ theme }) => ({
   textDecoration: 'none',
   [theme.breakpoints.down('lg')]: {
     alignSelf: 'center',
-    marginBottom: '54px',
+    marginBottom: '34px',
   },
 }));
 
@@ -197,4 +197,9 @@ export const StyledButtonGmail = styled(Button)(({ theme }) => ({
   [theme.breakpoints.down('lg')]: {
     display: 'none',
   },
+}));
+
+export const StyledErrorMessage = styled(Box)(({ theme }) => ({
+  color: 'rgba(190, 49, 49, 1)',
+  [theme.breakpoints.down('lg')]: {},
 }));

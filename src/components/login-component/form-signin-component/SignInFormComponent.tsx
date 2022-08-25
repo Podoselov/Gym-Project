@@ -10,6 +10,7 @@ import {
   StyledButton,
   StyledButtonFacebook,
   StyledButtonGmail,
+  StyledErrorMessage,
   StyledFacebookIcon,
   StyledFlexBox,
   StyledForm,
@@ -22,10 +23,7 @@ import {
   StyledText,
 } from '../form-login-component/StyledLoginForm';
 import { useAppDispatch } from '../../../hooks/redux';
-import {
-  addTrainingId,
-  loginUser,
-} from '../../../store/reducers/trainingReducers';
+import { loginUser } from '../../../store/reducers/trainingReducers';
 import { routes } from '../../../utils/routes';
 
 interface SignInFormValues {
@@ -54,13 +52,15 @@ const SignInFormComponent: React.FC<{}> = () => {
         );
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error.message);
       });
   }, []);
 
   const SignupSchema = Yup.object().shape({
     nameMail: Yup.string().required(''),
-    email: Yup.string().required('Please enter a valid email address.'),
+    email: Yup.string()
+      .email('Please enter a valid email address.')
+      .required('Please enter a valid email address.'),
     password: Yup.string()
       .min(8, 'Password is too short - should be 8 chars minimum.')
       .required('Please enter a password.'),
@@ -88,12 +88,18 @@ const SignInFormComponent: React.FC<{}> = () => {
           <StyledForm>
             <StyledName>YOUR name</StyledName>
             <StyledMailField id="firstName" name="nameMail" />
-            <StyledName sx={{ margin: '0 0 10px 0' }}>
+            <StyledName sx={{ margin: '0 0 6px 0' }}>
               email or phone number
             </StyledName>
             <StyledMailField id="email" name="email" />
-            <StyledName sx={{ margin: '0 0 10px 0' }}>PASSWORD</StyledName>
+            <ErrorMessage name="email">
+              {(msg) => <StyledErrorMessage>{msg}</StyledErrorMessage>}
+            </ErrorMessage>
+            <StyledName sx={{ margin: '0 0 6px 0' }}>PASSWORD</StyledName>
             <StyledPassField type="password" id="password" name="password" />
+            <ErrorMessage name="password">
+              {(msg) => <StyledErrorMessage>{msg}</StyledErrorMessage>}
+            </ErrorMessage>
             <StyledBox
               sx={{ display: 'flex', justifyContent: 'space-between' }}
             >

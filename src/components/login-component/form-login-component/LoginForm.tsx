@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import * as Yup from 'yup';
-import { Formik } from 'formik';
+import { ErrorMessage, Formik } from 'formik';
 import Checkbox from '@mui/material/Checkbox';
 import { IconButton } from '@mui/material';
 import { useAppDispatch } from '../../../hooks/redux';
@@ -14,6 +14,7 @@ import {
   StyledButton,
   StyledButtonFacebook,
   StyledButtonGmail,
+  StyledErrorMessage,
   StyledFacebookIcon,
   StyledFlexBox,
   StyledForm,
@@ -57,8 +58,12 @@ export const LoginForm: React.FC<{}> = () => {
   }, []);
 
   const SignupSchema = Yup.object().shape({
-    nameMail: Yup.string().required('Please enter a valid email address.'),
-    password: Yup.string().required('Please enter a password.'),
+    nameMail: Yup.string()
+      .email('Please enter a valid email address.')
+      .required('Please enter a valid email address.'),
+    password: Yup.string()
+      .required('Please enter a password.')
+      .min(8, 'Password is too short - should be 8 chars minimum.'),
   });
 
   const initialValues: MyFormValues = {
@@ -82,8 +87,14 @@ export const LoginForm: React.FC<{}> = () => {
           <StyledForm>
             <StyledName>User name / email address</StyledName>
             <StyledMailField id="firstName" name="nameMail" />
+            <ErrorMessage name="nameMail">
+              {(msg) => <StyledErrorMessage>{msg}</StyledErrorMessage>}
+            </ErrorMessage>
             <StyledName sx={{ margin: '0 0 10px 0' }}>PASSWORD</StyledName>
             <StyledPassField id="password" name="password" />
+            <ErrorMessage name="password">
+              {(msg) => <StyledErrorMessage>{msg}</StyledErrorMessage>}
+            </ErrorMessage>
             <StyledBox>
               <StyledFormControlLabel
                 control={
