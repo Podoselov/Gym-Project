@@ -13,8 +13,13 @@ import {
 import img from './slogan-img/heroImageHeader.png';
 import { routes } from '../../../utils/routes';
 import StyledImgBox from '../../img-box/StyledImgBox';
+import { useAppSelector } from '../../../hooks/redux';
 
 const SloganSection: React.FC = () => {
+  const isLogin = useAppSelector(({ trainingReducers }) => {
+    return trainingReducers.login;
+  });
+
   return (
     <StyledWraper>
       <StyledImgBox />
@@ -31,7 +36,15 @@ const SloganSection: React.FC = () => {
                 a fun and friendly, safe space.
               </span>
             </StyledText>
-            <StyledButton to={routes.LOGIN_ROUTE}>JOIN NOW</StyledButton>
+            <StyledButton
+              to={
+                isLogin.nameMail.length > 0
+                  ? routes.ACCOUNT_ROUTE
+                  : routes.LOGIN_ROUTE
+              }
+            >
+              JOIN NOW
+            </StyledButton>
             <StyledImg src={img} alt="слоган логотип" />
           </StyledBox>
         </StyledContentBox>

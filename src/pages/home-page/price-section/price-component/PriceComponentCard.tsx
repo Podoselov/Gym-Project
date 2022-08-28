@@ -18,6 +18,8 @@ import {
   StyledPriceText,
 } from './StyledPriceComponent';
 import { routes } from '../../../../utils/routes';
+import { useAppDispatch, useAppSelector } from '../../../../hooks/redux';
+import { addTraining } from '../../../../store/reducers/trainingReducers';
 
 interface IProps {
   name: string;
@@ -32,6 +34,24 @@ const PriceComponentCard: React.FC<IProps> = ({
   listItem,
   styledBox = false,
 }) => {
+  const dispatch = useAppDispatch();
+
+  const isLogin = useAppSelector(({ trainingReducers }) => {
+    return trainingReducers.login;
+  });
+
+  const addTrainingState = () => {
+    dispatch(
+      addTraining({
+        nameMail: isLogin.nameMail,
+        email: isLogin.nameMail,
+        id: isLogin.id,
+        training: name,
+        remember: isLogin.remember,
+      })
+    );
+  };
+
   return (
     <Box>
       {styledBox ? (
@@ -50,7 +70,14 @@ const PriceComponentCard: React.FC<IProps> = ({
             })}
           </StyledList>
           <StyledButtonWraper>
-            <StyledMainButton to={routes.LOGIN_ROUTE}>
+            <StyledMainButton
+              onClick={addTrainingState}
+              to={
+                isLogin.nameMail.length > 0
+                  ? routes.ACCOUNT_ROUTE
+                  : routes.LOGIN_ROUTE
+              }
+            >
               Join now
             </StyledMainButton>
           </StyledButtonWraper>
@@ -71,7 +98,16 @@ const PriceComponentCard: React.FC<IProps> = ({
             })}
           </StyledList>
           <StyledButtonWraper>
-            <StyledButton to={routes.LOGIN_ROUTE}>Join now</StyledButton>
+            <StyledButton
+              onClick={addTrainingState}
+              to={
+                isLogin.nameMail.length > 0
+                  ? routes.ACCOUNT_ROUTE
+                  : routes.LOGIN_ROUTE
+              }
+            >
+              Join now
+            </StyledButton>
           </StyledButtonWraper>
         </StyledBox>
       )}

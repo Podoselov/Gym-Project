@@ -18,6 +18,11 @@ import { logoutUser } from '../../store/reducers/trainingReducers';
 
 const AccountePage = () => {
   const user = useAppSelector((state) => state.trainingReducers.login);
+  const users = useAppSelector((state) =>
+    state.trainingReducers.training.filter(
+      (element) => element.nameMail === user.nameMail
+    )
+  );
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
@@ -37,7 +42,9 @@ const AccountePage = () => {
           <HeaderAccount name={user.nameMail} email={user.email} />
         </StyledHeaderContainer>
         <StyledProgramWraper>
-          <ProgramAccountComponent program="premium" />
+          <ProgramAccountComponent
+            program={users.map((element) => element.training)}
+          />
         </StyledProgramWraper>
         <StyledProgramTimeWraper>
           <ProgramTimeComponent

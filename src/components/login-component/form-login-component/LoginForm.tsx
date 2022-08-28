@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import * as Yup from 'yup';
 import { ErrorMessage, Formik } from 'formik';
 import Checkbox from '@mui/material/Checkbox';
-import { IconButton } from '@mui/material';
+import { Alert, IconButton } from '@mui/material';
 import { useAppDispatch } from '../../../hooks/redux';
 import { loginUser } from '../../../store/reducers/trainingReducers';
 import { routes } from '../../../utils/routes';
@@ -35,6 +35,7 @@ interface MyFormValues {
 }
 
 export const LoginForm: React.FC<{}> = () => {
+  const [errorMessage, setErrorMessage] = useState('');
   const dispatch = useAppDispatch();
 
   const navigate = useNavigate();
@@ -49,11 +50,14 @@ export const LoginForm: React.FC<{}> = () => {
             email: user.email,
             id: user.uid,
             remember: userValue.remember,
+            training: '',
           })
         );
+        setErrorMessage('');
+        navigate(routes.HOME_ROUTE);
       })
       .catch((error) => {
-        console.log(error);
+        setErrorMessage(error.message);
       });
   }, []);
 
@@ -78,13 +82,15 @@ export const LoginForm: React.FC<{}> = () => {
         initialValues={initialValues}
         onSubmit={(values, actions) => {
           addLoginUsertoState(values);
-          navigate(routes.HOME_ROUTE);
           actions.resetForm();
         }}
         validationSchema={SignupSchema}
       >
         {({ values, handleChange }) => (
           <StyledForm>
+            {errorMessage.length > 0 ? (
+              <Alert severity="error">{errorMessage.slice(17, 36)}</Alert>
+            ) : null}
             <StyledName>User name / email address</StyledName>
             <StyledMailField id="firstName" name="nameMail" />
             <ErrorMessage name="nameMail">

@@ -45,6 +45,9 @@ export const StyledButtonBuyMore = styled(Button)(({ theme }) => ({
   letterSpacing: '1px',
   textTransform: 'uppercase',
   margin: '0 0 19px 0',
+  '&:hover': {
+    backgroundColor: 'rgba(0, 0, 0, 1)',
+  },
   [theme.breakpoints.down('lg')]: {
     fontSize: '18px',
     lineHeight: '22px',

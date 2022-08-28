@@ -3,7 +3,7 @@ import { Training } from './typeTraining';
 
 const initialState: Training = {
   training: [],
-  login: { nameMail: '', email: '', id: '', remember: false },
+  login: { nameMail: '', email: '', id: '', training: '', remember: false },
   trainingId: '',
 };
 
@@ -22,12 +22,20 @@ export const todoSlice = createSlice({
         nameMail: '',
         email: '',
         id: '',
+        training: '',
         remember: false,
       };
+    },
+    addTraining(state, action) {
+      state.training = state.training.filter(
+        (element) => element.id !== action.payload.id
+      );
+      state.training.push(action.payload);
     },
   },
   extraReducers: (builder) => {},
 });
 
-export const { addTrainingId, loginUser, logoutUser } = todoSlice.actions;
+export const { addTrainingId, loginUser, logoutUser, addTraining } =
+  todoSlice.actions;
 export default todoSlice.reducer;

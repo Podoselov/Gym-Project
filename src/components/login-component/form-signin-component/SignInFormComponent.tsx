@@ -1,6 +1,6 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
-import { IconButton } from '@mui/material';
+import { Alert, IconButton } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import { ErrorMessage, Formik } from 'formik';
@@ -30,10 +30,13 @@ interface SignInFormValues {
   nameMail: string;
   email: string;
   password: string;
+  training: string;
   remember: boolean;
 }
 
 const SignInFormComponent: React.FC<{}> = () => {
+  const [errorMessage, setErrorMessage] = useState('');
+
   const dispatch = useAppDispatch();
 
   const navigate = useNavigate();
@@ -47,12 +50,14 @@ const SignInFormComponent: React.FC<{}> = () => {
             nameMail: userValue.nameMail,
             email: user.email,
             id: user.uid,
+            training: '',
             remember: userValue.remember,
           })
         );
+        navigate(routes.HOME_ROUTE);
       })
       .catch((error) => {
-        console.log(error.message);
+        setErrorMessage(error.message);
       });
   }, []);
 
@@ -70,6 +75,7 @@ const SignInFormComponent: React.FC<{}> = () => {
     nameMail: '',
     email: '',
     password: '',
+    training: '',
     remember: false,
   };
 
@@ -80,12 +86,14 @@ const SignInFormComponent: React.FC<{}> = () => {
         validationSchema={SignupSchema}
         onSubmit={(values, actions) => {
           addUserToState(values);
-          navigate(routes.HOME_ROUTE);
           actions.resetForm();
         }}
       >
         {({ values, handleChange, errors }) => (
           <StyledForm>
+            {errorMessage.length > 0 ? (
+              <Alert severity="error">Email already in use</Alert>
+            ) : null}
             <StyledName>YOUR name</StyledName>
             <StyledMailField id="firstName" name="nameMail" />
             <StyledName sx={{ margin: '0 0 6px 0' }}>
